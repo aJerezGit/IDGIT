@@ -1,0 +1,9 @@
+c:\users\usuario\documents\visual studio 2017\Projects\Loss\Loss\bin\Debug\Loss.exe.config
+c:\users\usuario\documents\visual studio 2017\Projects\Loss\Loss\bin\Debug\Loss.exe
+c:\users\usuario\documents\visual studio 2017\Projects\Loss\Loss\bin\Debug\Loss.pdb
+c:\users\usuario\documents\visual studio 2017\Projects\Loss\Loss\obj\Debug\Loss.csprojResolveAssemblyReference.cache
+c:\users\usuario\documents\visual studio 2017\Projects\Loss\Loss\obj\Debug\Loss.Properties.Resources.resources
+c:\users\usuario\documents\visual studio 2017\Projects\Loss\Loss\obj\Debug\Loss.csproj.GenerateResource.Cache
+c:\users\usuario\documents\visual studio 2017\Projects\Loss\Loss\obj\Debug\Loss.exe
+c:\users\usuario\documents\visual studio 2017\Projects\Loss\Loss\obj\Debug\Loss.pdb
+c:\users\usuario\documents\visual studio 2017\Projects\Loss\Loss\obj\Debug\Loss.Form1.resources

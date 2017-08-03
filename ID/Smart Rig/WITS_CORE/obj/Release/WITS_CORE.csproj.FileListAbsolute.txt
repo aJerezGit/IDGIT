@@ -1,0 +1,6 @@
+C:\Users\Andre\Documents\WindowsFormsApplication1\WITS_CORE\bin\Release\WITS_CORE.dll
+C:\Users\Andre\Documents\WindowsFormsApplication1\WITS_CORE\bin\Release\WITS_CORE.pdb
+C:\Users\Andre\Documents\WindowsFormsApplication1\WITS_CORE\bin\Release\System.Data.SQLite.dll
+C:\Users\Andre\Documents\WindowsFormsApplication1\WITS_CORE\bin\Release\System.Data.SQLite.xml
+C:\Users\Andre\Documents\WindowsFormsApplication1\WITS_CORE\obj\Release\WITS_CORE.dll
+C:\Users\Andre\Documents\WindowsFormsApplication1\WITS_CORE\obj\Release\WITS_CORE.pdb

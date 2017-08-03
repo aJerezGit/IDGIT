@@ -1,0 +1,44 @@
+C:\Users\Andre\Documents\WindowsFormsApplication1\WITS_CORE\bin\Debug\WITS_CORE.dll
+C:\Users\Andre\Documents\WindowsFormsApplication1\WITS_CORE\bin\Debug\WITS_CORE.pdb
+C:\Users\Andre\Documents\WindowsFormsApplication1\WITS_CORE\bin\Debug\MySql.Data.dll
+C:\Users\Andre\Documents\WindowsFormsApplication1\WITS_CORE\bin\Debug\System.Data.SQLite.dll
+C:\Users\Andre\Documents\WindowsFormsApplication1\WITS_CORE\bin\Debug\MySql.Data.xml
+C:\Users\Andre\Documents\WindowsFormsApplication1\WITS_CORE\bin\Debug\System.Data.SQLite.xml
+C:\Users\Andre\Documents\WindowsFormsApplication1\WITS_CORE\obj\Debug\WITS_CORE.csprojResolveAssemblyReference.cache
+C:\Users\Andre\Documents\WindowsFormsApplication1\WITS_CORE\obj\Debug\WITS_CORE.dll
+C:\Users\Andre\Documents\WindowsFormsApplication1\WITS_CORE\obj\Debug\WITS_CORE.pdb
+C:\Users\Andre\Desktop\Smart Rig\WITS_CORE\bin\Debug\WITS_CORE.dll
+C:\Users\Andre\Desktop\Smart Rig\WITS_CORE\bin\Debug\WITS_CORE.pdb
+C:\Users\Andre\Desktop\Smart Rig\WITS_CORE\bin\Debug\MySql.Data.xml
+C:\Users\Andre\Desktop\Smart Rig\WITS_CORE\bin\Debug\System.Data.SQLite.xml
+C:\Users\Andre\Desktop\Smart Rig\WITS_CORE\obj\Debug\WITS_CORE.csprojResolveAssemblyReference.cache
+C:\Users\Andre\Desktop\Smart Rig\WITS_CORE\obj\Debug\WITS_CORE.dll
+C:\Users\Andre\Desktop\Smart Rig\WITS_CORE\obj\Debug\WITS_CORE.pdb
+C:\Users\kareshi-san\Documents\Visual Studio 2015\Projects\Smart Rig\WITS_CORE\bin\Debug\WITS_CORE.dll
+C:\Users\kareshi-san\Documents\Visual Studio 2015\Projects\Smart Rig\WITS_CORE\bin\Debug\WITS_CORE.pdb
+C:\Users\kareshi-san\Documents\Visual Studio 2015\Projects\Smart Rig\WITS_CORE\bin\Debug\MetroFramework.Design.dll
+C:\Users\kareshi-san\Documents\Visual Studio 2015\Projects\Smart Rig\WITS_CORE\bin\Debug\MetroFramework.dll
+C:\Users\kareshi-san\Documents\Visual Studio 2015\Projects\Smart Rig\WITS_CORE\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\kareshi-san\Documents\Visual Studio 2015\Projects\Smart Rig\WITS_CORE\obj\Debug\WITS_CORE.dll
+C:\Users\kareshi-san\Documents\Visual Studio 2015\Projects\Smart Rig\WITS_CORE\obj\Debug\WITS_CORE.pdb
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\WITS_CORE\bin\Debug\WITS_CORE.dll
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\WITS_CORE\bin\Debug\WITS_CORE.pdb
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\WITS_CORE\bin\Debug\MetroFramework.Design.dll
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\WITS_CORE\bin\Debug\MetroFramework.dll
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\WITS_CORE\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\WITS_CORE\bin\Debug\MySql.Data.dll
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\WITS_CORE\bin\Debug\MySql.Data.xml
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\WITS_CORE\bin\Debug\System.Data.SQLite.xml
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\WITS_CORE\obj\Debug\WITS_CORE.csprojResolveAssemblyReference.cache
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\WITS_CORE\obj\Debug\WITS_CORE.dll
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\WITS_CORE\obj\Debug\WITS_CORE.pdb
+C:\Users\Andre\Desktop\ID\Smart Rig\WITS_CORE\bin\Debug\WITS_CORE.dll
+C:\Users\Andre\Desktop\ID\Smart Rig\WITS_CORE\bin\Debug\WITS_CORE.pdb
+C:\Users\Andre\Desktop\ID\Smart Rig\WITS_CORE\bin\Debug\MetroFramework.Design.dll
+C:\Users\Andre\Desktop\ID\Smart Rig\WITS_CORE\bin\Debug\MetroFramework.dll
+C:\Users\Andre\Desktop\ID\Smart Rig\WITS_CORE\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Andre\Desktop\ID\Smart Rig\WITS_CORE\bin\Debug\MySql.Data.dll
+C:\Users\Andre\Desktop\ID\Smart Rig\WITS_CORE\bin\Debug\MySql.Data.xml
+C:\Users\Andre\Desktop\ID\Smart Rig\WITS_CORE\obj\Debug\WITS_CORE.csprojResolveAssemblyReference.cache
+C:\Users\Andre\Desktop\ID\Smart Rig\WITS_CORE\obj\Debug\WITS_CORE.dll
+C:\Users\Andre\Desktop\ID\Smart Rig\WITS_CORE\obj\Debug\WITS_CORE.pdb

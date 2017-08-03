@@ -1,0 +1,110 @@
+c:\users\tarazona\documents\visual studio 2015\Projects\Radar\Radar\bin\Debug\Radar.exe.config
+C:\Users\Andre\Downloads\Radar\Radar\Radar\bin\Debug\Radar.exe.config
+C:\Users\Andre\Downloads\Radar\Radar\Radar\obj\Debug\Radar.csprojResolveAssemblyReference.cache
+C:\Users\Andre\Downloads\Radar\Radar\Radar\obj\Debug\Radar.frmConfigurarRadar2.resources
+C:\Users\Andre\Downloads\Radar\Radar\Radar\obj\Debug\Radar.frmConfigurarRadar1.resources
+C:\Users\Andre\Downloads\Radar\Radar\Radar\obj\Debug\Radar.Properties.Resources.resources
+C:\Users\Andre\Downloads\Radar\Radar\Radar\obj\Debug\Radar.csproj.GenerateResource.Cache
+C:\Users\Andre\Downloads\Radar\Radar\Radar\bin\Debug\Radar.exe
+C:\Users\Andre\Downloads\Radar\Radar\Radar\bin\Debug\Radar.pdb
+C:\Users\Andre\Downloads\Radar\Radar\Radar\bin\Debug\MetroFramework.Design.dll
+C:\Users\Andre\Downloads\Radar\Radar\Radar\bin\Debug\MetroFramework.dll
+C:\Users\Andre\Downloads\Radar\Radar\Radar\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Andre\Downloads\Radar\Radar\Radar\obj\Debug\Radar.exe
+C:\Users\Andre\Downloads\Radar\Radar\Radar\obj\Debug\Radar.pdb
+C:\Users\Andre\Desktop\Smart Rig\Radar\Radar\bin\Debug\Radar.exe.config
+C:\Users\Andre\Desktop\Smart Rig\Radar\Radar\bin\Debug\Radar.exe
+C:\Users\Andre\Desktop\Smart Rig\Radar\Radar\bin\Debug\Radar.pdb
+C:\Users\Andre\Desktop\Smart Rig\Radar\Radar\bin\Debug\MetroFramework.Design.dll
+C:\Users\Andre\Desktop\Smart Rig\Radar\Radar\bin\Debug\MetroFramework.dll
+C:\Users\Andre\Desktop\Smart Rig\Radar\Radar\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Andre\Desktop\Smart Rig\Radar\Radar\bin\Debug\WITS_CORE.dll
+C:\Users\Andre\Desktop\Smart Rig\Radar\Radar\bin\Debug\System.Data.SQLite.dll
+C:\Users\Andre\Desktop\Smart Rig\Radar\Radar\bin\Debug\MySql.Data.dll
+C:\Users\Andre\Desktop\Smart Rig\Radar\Radar\bin\Debug\WITS_CORE.pdb
+C:\Users\Andre\Desktop\Smart Rig\Radar\Radar\bin\Debug\System.Data.SQLite.xml
+C:\Users\Andre\Desktop\Smart Rig\Radar\Radar\bin\Debug\MySql.Data.xml
+C:\Users\Andre\Desktop\Smart Rig\Radar\Radar\obj\Debug\Radar.csprojResolveAssemblyReference.cache
+C:\Users\Andre\Desktop\Smart Rig\Radar\Radar\obj\Debug\Radar.frmConfigurarRadar2.resources
+C:\Users\Andre\Desktop\Smart Rig\Radar\Radar\obj\Debug\Radar.frmConfigurarRadar1.resources
+C:\Users\Andre\Desktop\Smart Rig\Radar\Radar\obj\Debug\Radar.Properties.Resources.resources
+C:\Users\Andre\Desktop\Smart Rig\Radar\Radar\obj\Debug\Radar.csproj.GenerateResource.Cache
+C:\Users\Andre\Desktop\Smart Rig\Radar\Radar\obj\Debug\Radar.exe
+C:\Users\Andre\Desktop\Smart Rig\Radar\Radar\obj\Debug\Radar.pdb
+C:\Users\kareshi-san\Documents\Visual Studio 2015\Projects\Smart Rig\Radar\Radar\bin\Debug\Radar.exe.config
+C:\Users\kareshi-san\Documents\Visual Studio 2015\Projects\Smart Rig\Radar\Radar\bin\Debug\Radar.exe
+C:\Users\kareshi-san\Documents\Visual Studio 2015\Projects\Smart Rig\Radar\Radar\bin\Debug\Radar.pdb
+C:\Users\kareshi-san\Documents\Visual Studio 2015\Projects\Smart Rig\Radar\Radar\bin\Debug\MetroFramework.Design.dll
+C:\Users\kareshi-san\Documents\Visual Studio 2015\Projects\Smart Rig\Radar\Radar\bin\Debug\MetroFramework.dll
+C:\Users\kareshi-san\Documents\Visual Studio 2015\Projects\Smart Rig\Radar\Radar\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\kareshi-san\Documents\Visual Studio 2015\Projects\Smart Rig\Radar\Radar\bin\Debug\WITS_CORE.dll
+C:\Users\kareshi-san\Documents\Visual Studio 2015\Projects\Smart Rig\Radar\Radar\bin\Debug\MySql.Data.dll
+C:\Users\kareshi-san\Documents\Visual Studio 2015\Projects\Smart Rig\Radar\Radar\bin\Debug\WITS_CORE.pdb
+C:\Users\kareshi-san\Documents\Visual Studio 2015\Projects\Smart Rig\Radar\Radar\obj\Debug\Radar.csprojResolveAssemblyReference.cache
+C:\Users\kareshi-san\Documents\Visual Studio 2015\Projects\Smart Rig\Radar\Radar\obj\Debug\Radar.frmConfigurarRadar2.resources
+C:\Users\kareshi-san\Documents\Visual Studio 2015\Projects\Smart Rig\Radar\Radar\obj\Debug\Radar.frmConfigurarRadar1.resources
+C:\Users\kareshi-san\Documents\Visual Studio 2015\Projects\Smart Rig\Radar\Radar\obj\Debug\Radar.Properties.Resources.resources
+C:\Users\kareshi-san\Documents\Visual Studio 2015\Projects\Smart Rig\Radar\Radar\obj\Debug\Radar.csproj.GenerateResource.Cache
+C:\Users\kareshi-san\Documents\Visual Studio 2015\Projects\Smart Rig\Radar\Radar\obj\Debug\Radar.exe
+C:\Users\kareshi-san\Documents\Visual Studio 2015\Projects\Smart Rig\Radar\Radar\obj\Debug\Radar.pdb
+C:\Users\kareshi-san\Documents\Visual Studio 2015\Projects\Smart Rig\Radar\Radar\obj\Debug\Radar.ConfigurarRadar1.resources
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\Radar\Radar\bin\Debug\Radar.exe.config
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\Radar\Radar\bin\Debug\Radar.exe
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\Radar\Radar\bin\Debug\Radar.pdb
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\Radar\Radar\bin\Debug\MetroFramework.Design.dll
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\Radar\Radar\bin\Debug\MetroFramework.dll
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\Radar\Radar\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\Radar\Radar\bin\Debug\WITS_CORE.dll
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\Radar\Radar\bin\Debug\System.Data.SQLite.dll
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\Radar\Radar\bin\Debug\MySql.Data.dll
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\Radar\Radar\bin\Debug\WITS_CORE.pdb
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\Radar\Radar\bin\Debug\System.Data.SQLite.xml
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\Radar\Radar\bin\Debug\MySql.Data.xml
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\Radar\Radar\obj\Debug\Radar.csprojResolveAssemblyReference.cache
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\Radar\Radar\obj\Debug\Radar.frmConfigurarRadar2.resources
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\Radar\Radar\obj\Debug\Radar.ConfigurarRadar1.resources
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\Radar\Radar\obj\Debug\Radar.Properties.Resources.resources
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\Radar\Radar\obj\Debug\Radar.csproj.GenerateResource.Cache
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\Radar\Radar\obj\Debug\Radar.exe
+C:\Users\Andre\Downloads\Smart Rig_1-1\Smart Rig\Radar\Radar\obj\Debug\Radar.pdb
+C:\Users\usuario\Documents\Visual Studio 2017\Projects\Smart Rig\Radar\Radar\bin\Debug\Radar.exe.config
+C:\Users\usuario\Documents\Visual Studio 2017\Projects\Smart Rig\Radar\Radar\bin\Debug\Radar.exe
+C:\Users\usuario\Documents\Visual Studio 2017\Projects\Smart Rig\Radar\Radar\bin\Debug\Radar.pdb
+C:\Users\usuario\Documents\Visual Studio 2017\Projects\Smart Rig\Radar\Radar\bin\Debug\MetroFramework.Design.dll
+C:\Users\usuario\Documents\Visual Studio 2017\Projects\Smart Rig\Radar\Radar\bin\Debug\MetroFramework.dll
+C:\Users\usuario\Documents\Visual Studio 2017\Projects\Smart Rig\Radar\Radar\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\usuario\Documents\Visual Studio 2017\Projects\Smart Rig\Radar\Radar\bin\Debug\WITS_CORE.dll
+C:\Users\usuario\Documents\Visual Studio 2017\Projects\Smart Rig\Radar\Radar\bin\Debug\System.Data.SQLite.dll
+C:\Users\usuario\Documents\Visual Studio 2017\Projects\Smart Rig\Radar\Radar\bin\Debug\MySql.Data.dll
+C:\Users\usuario\Documents\Visual Studio 2017\Projects\Smart Rig\Radar\Radar\bin\Debug\WITS_CORE.pdb
+C:\Users\usuario\Documents\Visual Studio 2017\Projects\Smart Rig\Radar\Radar\bin\Debug\System.Data.SQLite.xml
+C:\Users\usuario\Documents\Visual Studio 2017\Projects\Smart Rig\Radar\Radar\bin\Debug\MySql.Data.xml
+C:\Users\usuario\Documents\Visual Studio 2017\Projects\Smart Rig\Radar\Radar\obj\Debug\Radar.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Documents\Visual Studio 2017\Projects\Smart Rig\Radar\Radar\obj\Debug\Radar.frmConfigurarRadar2.resources
+C:\Users\usuario\Documents\Visual Studio 2017\Projects\Smart Rig\Radar\Radar\obj\Debug\Radar.ConfigurarRadar1.resources
+C:\Users\usuario\Documents\Visual Studio 2017\Projects\Smart Rig\Radar\Radar\obj\Debug\Radar.Properties.Resources.resources
+C:\Users\usuario\Documents\Visual Studio 2017\Projects\Smart Rig\Radar\Radar\obj\Debug\Radar.csproj.GenerateResource.Cache
+C:\Users\usuario\Documents\Visual Studio 2017\Projects\Smart Rig\Radar\Radar\obj\Debug\Radar.exe
+C:\Users\usuario\Documents\Visual Studio 2017\Projects\Smart Rig\Radar\Radar\obj\Debug\Radar.pdb
+C:\Users\Andre\Desktop\ID\Smart Rig\Radar\Radar\bin\Debug\Radar.exe.config
+C:\Users\Andre\Desktop\ID\Smart Rig\Radar\Radar\bin\Debug\Radar.exe
+C:\Users\Andre\Desktop\ID\Smart Rig\Radar\Radar\bin\Debug\Radar.pdb
+C:\Users\Andre\Desktop\ID\Smart Rig\Radar\Radar\bin\Debug\MetroFramework.Design.dll
+C:\Users\Andre\Desktop\ID\Smart Rig\Radar\Radar\bin\Debug\MetroFramework.dll
+C:\Users\Andre\Desktop\ID\Smart Rig\Radar\Radar\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Andre\Desktop\ID\Smart Rig\Radar\Radar\bin\Debug\WITS_CORE.dll
+C:\Users\Andre\Desktop\ID\Smart Rig\Radar\Radar\bin\Debug\System.Data.SQLite.dll
+C:\Users\Andre\Desktop\ID\Smart Rig\Radar\Radar\bin\Debug\MySql.Data.dll
+C:\Users\Andre\Desktop\ID\Smart Rig\Radar\Radar\bin\Debug\WITS_CORE.pdb
+C:\Users\Andre\Desktop\ID\Smart Rig\Radar\Radar\bin\Debug\MySql.Data.xml
+C:\Users\Andre\Desktop\ID\Smart Rig\Radar\Radar\obj\Debug\Radar.csprojResolveAssemblyReference.cache
+C:\Users\Andre\Desktop\ID\Smart Rig\Radar\Radar\obj\Debug\Radar.frmConfigurarRadar2.resources
+C:\Users\Andre\Desktop\ID\Smart Rig\Radar\Radar\obj\Debug\Radar.ConfigurarRadar1.resources
+C:\Users\Andre\Desktop\ID\Smart Rig\Radar\Radar\obj\Debug\Radar.Properties.Resources.resources
+C:\Users\Andre\Desktop\ID\Smart Rig\Radar\Radar\obj\Debug\Radar.csproj.GenerateResource.Cache
+C:\Users\Andre\Desktop\ID\Smart Rig\Radar\Radar\obj\Debug\Radar.exe
+C:\Users\Andre\Desktop\ID\Smart Rig\Radar\Radar\obj\Debug\Radar.pdb
+C:\Users\Andre\Desktop\ID\Smart Rig\Radar\Radar\bin\Debug\Radar.exe.manifest
+C:\Users\Andre\Desktop\ID\Smart Rig\Radar\Radar\bin\Debug\Radar.application
+C:\Users\Andre\Desktop\ID\Smart Rig\Radar\Radar\obj\Debug\Radar.exe.manifest
+C:\Users\Andre\Desktop\ID\Smart Rig\Radar\Radar\obj\Debug\Radar.application

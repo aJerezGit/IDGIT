@@ -1,0 +1,9 @@
+c:\users\usuario\documents\visual studio 2017\Projects\NPT_Panel\NPT_Panel\obj\Debug\NPT_Panel.csprojResolveAssemblyReference.cache
+c:\users\usuario\documents\visual studio 2017\Projects\NPT_Panel\NPT_Panel\obj\Debug\NPT_Panel.Form1.resources
+c:\users\usuario\documents\visual studio 2017\Projects\NPT_Panel\NPT_Panel\obj\Debug\NPT_Panel.Properties.Resources.resources
+c:\users\usuario\documents\visual studio 2017\Projects\NPT_Panel\NPT_Panel\obj\Debug\NPT_Panel.csproj.GenerateResource.Cache
+c:\users\usuario\documents\visual studio 2017\Projects\NPT_Panel\NPT_Panel\bin\Debug\NPT_Panel.exe.config
+c:\users\usuario\documents\visual studio 2017\Projects\NPT_Panel\NPT_Panel\bin\Debug\NPT_Panel.exe
+c:\users\usuario\documents\visual studio 2017\Projects\NPT_Panel\NPT_Panel\bin\Debug\NPT_Panel.pdb
+c:\users\usuario\documents\visual studio 2017\Projects\NPT_Panel\NPT_Panel\obj\Debug\NPT_Panel.exe
+c:\users\usuario\documents\visual studio 2017\Projects\NPT_Panel\NPT_Panel\obj\Debug\NPT_Panel.pdb

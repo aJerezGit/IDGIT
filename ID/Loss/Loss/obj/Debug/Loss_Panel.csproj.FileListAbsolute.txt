@@ -1,0 +1,3 @@
+C:\Users\Andre\Desktop\ID\Loss\Loss\bin\Debug\Loss.exe.config
+C:\Users\Andre\Desktop\ID\Loss\Loss\obj\Debug\Loss.exe
+C:\Users\Andre\Desktop\ID\Loss\Loss\obj\Debug\Loss.pdb
