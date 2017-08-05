@@ -44,11 +44,6 @@ namespace Smart_Rig_V1._1
 
         //TODO: PASAR DE VARIABLES CONSTANTES A ORIENTADO A OBJETOS
         double diametro;
-        double diametroLasBoquillas;
-        int numerodeBoquillas;
-        double anguloSimetriaAxial;
-        double longitudPotencialdelNucleo;
-        double distanciadeBoquillasaldonfodelhueco;
         double k = 0.122;
         double densidadLodo = 11;
         double velocidadSalidaBoquillas = 211;
@@ -60,7 +55,7 @@ namespace Smart_Rig_V1._1
         double torqueAplicadoEnLaBroca;
         double variableN;
         double ROPmaxLimpieza;
-
+        double WOBe;
         //wits de logica a utilizar
 
         double wits0130;
@@ -74,11 +69,10 @@ namespace Smart_Rig_V1._1
 
 
         double ropa1;
-        double costa1;
-        double tripa1, tripa2;
+        double costa1, costa2, costa3;
+        double tripMove1, tripMove2;
+        double tripMove3;
         double limiteInteriorHMSE = 0, limiteExteriorHMSE = 0;
-        double ecuacionAV;
-        double ecuacionM;
         double ecuacionN;
 
         double limiteinteriorNPT;
@@ -87,7 +81,11 @@ namespace Smart_Rig_V1._1
         double tiempoNPT = 0;// Valor del tiempo de demora operacion no planeada
         int estadoNPT = 1;
         int tiempoEjecucionPerforacion1 = 0;
+        double tiempoEstiPerforacion1 = 0;
+        double tiempoEstiPerforacion2 = 0;
+        double tiempoEstiPerforacion3 = 0;
         double wits0112Anterior;
+        double DaysT, DaysC, DaysTyC;
 
         //valores influx
         private double Wits0126Anterior = 0; //Canal 0127 anterior
@@ -193,104 +191,86 @@ namespace Smart_Rig_V1._1
                 string[] items = File.ReadAllLines(archivoALeer1);
                 foreach (string itemAseleccionar in items)
                 {
-                    if (itemAseleccionar.Contains("diameter1"))//DiametroBroca
-                    {
+                    if (itemAseleccionar.Contains("diameter1")) {//DiametroBroca                    
                         String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
                         diametro = double.Parse(valorItem[1]);
                     }
-
-                    if (itemAseleccionar.Contains(""))//DiametroBoquillas
-                    {
-                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
-                        diametroLasBoquillas = double.Parse(valorItem[1]);
-                    }
-
-                    if (itemAseleccionar.Contains(""))//NumeroBoquillas
-                    {
-                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
-                        numerodeBoquillas = int.Parse(valorItem[1]);
-                    }
-
-                    if (itemAseleccionar.Contains("DLS1"))//AnguloChorro
-                    {
-                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
-                        anguloSimetriaAxial = double.Parse(valorItem[1]);
-                    }
-
-                    if (itemAseleccionar.Contains("Thickness1"))//LongitudNucleo
-                    {
-                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
-                        longitudPotencialdelNucleo = double.Parse(valorItem[1]);
-                    }
-
-                    if (itemAseleccionar.Contains(""))//DistanciaFondo
-                    {
-                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
-                        distanciadeBoquillasaldonfodelhueco = double.Parse(valorItem[1]);
-                    }
-
-                    //if (itemAseleccionar.Contains(""))//TorqueMotor
-                    //{
-                    //    String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
-                    //    torqueMax = double.Parse(valorItem[1]);
-                    //}
-
-                    //if (itemAseleccionar.Contains(""))//PresionMotor
-                    //{
-                    //    String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
-                    //    limitemaximopresiondiferencialMotor = double.Parse(valorItem[1]);
-                    //}
-
-                    //if (itemAseleccionar.Contains("Pbit1"))//CaidaPresion
-                    //{
-                    //    String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
-                    //    caidadePresionsobrelaBroca = double.Parse(valorItem[1]);
-                    //}
-
-                    //if (itemAseleccionar.Contains("KN1"))//VelocidadMotor
-                    //{
-                    //    String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
-                    //    velocidadRotacionMotor = double.Parse(valorItem[1]);
-                    //}
-
-                    if (itemAseleccionar.Contains(""))//AreaBoquillas
-                    {
-                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
-                        areadelasBoquillas = double.Parse(valorItem[1]);
-                    }
-
-                    //if (itemAseleccionar.Contains("TS1"))//TorqueBroca
-                    //{
-                    //    String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
-                    //    torqueAplicadoEnLaBroca = double.Parse(valorItem[1]);
-                    //}
 
                     if (itemAseleccionar.Contains("VariableN"))
                     {
                         String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
                         variableN = double.Parse(valorItem[1]);
+                    }                    
+
+                    if (itemAseleccionar.Contains("Ropave1"))
+                    {
+                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                        ropa1 = double.Parse(valorItem[1]);
                     }
 
-                    //if (itemAseleccionar.Contains("TripSpeed1"))//VelocidadBajando
-                    //{
-                    //    String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
-                    //    VelocidadLimiteBajando = double.Parse(valorItem[1]);
-                    //}
+                    if (itemAseleccionar.Contains("Cost1"))
+                    {
+                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                        costa1 = double.Parse(valorItem[1]);
+                    }
 
-                    //if (itemAseleccionar.Contains("TripSpeed1"))//VelocidadSubiendo
-                    //{
-                    //    String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
-                    //    VelocidadLimiteSubiendo = double.Parse(valorItem[1]);
-                    //}
+                    if (itemAseleccionar.Contains("Cost2"))
+                    {
+                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                        costa2 = double.Parse(valorItem[1]);
+                    }
 
-                    //if (itemAseleccionar.Contains("ROPMax1"))//ROPmaxLimpieza
-                    //{
-                    //    String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
-                    //    ROPmaxLimpieza = double.Parse(valorItem[1]);
-                    //}
+                    if (itemAseleccionar.Contains("Cost3"))
+                    {
+                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                        costa3 = double.Parse(valorItem[1]);
+                    }
 
+                    if (itemAseleccionar.Contains("Move1"))
+                    {
+                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                        tripMove1 = double.Parse(valorItem[1]);
+                    }
+                    if (itemAseleccionar.Contains("Move2"))
+                    {
+                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                        tripMove2 = double.Parse(valorItem[1]);
+                    }
+                    if (itemAseleccionar.Contains("Move3"))
+                    {
+                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                        tripMove3 = double.Parse(valorItem[1]);
+                    }
+                    if (itemAseleccionar.Contains("Days1"))
+                    {
+                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                        tiempoEstiPerforacion1 = double.Parse(valorItem[1]);
+                    }
+                    if (itemAseleccionar.Contains("Days2"))
+                    {
+                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                        tiempoEstiPerforacion2 = double.Parse(valorItem[1]);
+                    }
+                    if (itemAseleccionar.Contains("Days3"))
+                    {
+                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                        tiempoEstiPerforacion3 = double.Parse(valorItem[1]);
+                    }
+                    //TYC
+                    if (itemAseleccionar.Contains("DaysT"))
+                    {
+                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                        DaysT = double.Parse(valorItem[1]);
+                    }
+                    if (itemAseleccionar.Contains("DaysC"))
+                    {
+                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                        DaysC = double.Parse(valorItem[1]);
+                    }
                 }
             }
+
+            DaysTyC = DaysT + DaysC;
 
             string archiALeer2 = archivoConfigurador + nombreConfiguradorRadar2;
 
@@ -299,27 +279,6 @@ namespace Smart_Rig_V1._1
                 string[] items = File.ReadAllLines(archiALeer2);
                 foreach (string itemAseleccionar in items)
                 {
-                    if (itemAseleccionar.Contains("ropa1"))
-                    {
-                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
-                        ropa1 = double.Parse(valorItem[1]);
-                    }
-
-                    if (itemAseleccionar.Contains("costa1"))
-                    {
-                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
-                        costa1 = double.Parse(valorItem[1]);
-                    }
-                    if (itemAseleccionar.Contains("tripa1"))
-                    {
-                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
-                        tripa1 = double.Parse(valorItem[1]);
-                    }
-                    if (itemAseleccionar.Contains("tripa2"))
-                    {
-                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
-                        tripa2 = double.Parse(valorItem[1]);
-                    }
                     if (itemAseleccionar.Contains("Tmax1"))//TorqueMotor
                     {
                         String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
@@ -361,6 +320,17 @@ namespace Smart_Rig_V1._1
                         String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
                         ROPmaxLimpieza = double.Parse(valorItem[1]);
                     }
+                    if (itemAseleccionar.Contains("TFA1"))//AreaBoquillas SI
+                    {
+                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                        areadelasBoquillas = double.Parse(valorItem[1]);
+                    }
+                    if (itemAseleccionar.Contains("WOBe1"))//WOBe
+                    {
+                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                        WOBe = double.Parse(valorItem[1]);
+                    }
+                    
                 }
             }
             //limites HMSE
@@ -370,17 +340,13 @@ namespace Smart_Rig_V1._1
             limiteExteriorHMSE = ropa1 - Porcentaje;
 
             //limites NPT
-            double tiempoNPT = tripa1 * 0.3;
-            limiteinteriorNPT = tripa1 + tiempoNPT;
-            limitesuperiorNPT = tripa1;
+            double tiempoNPT = tiempoEstiPerforacion1 * 0.3;
+            limiteinteriorNPT = tiempoEstiPerforacion1 + tiempoNPT;
+            limitesuperiorNPT = tiempoEstiPerforacion1;
 
-            ecuacionAV = new ecuacionesRadar().ecuacionAV(diametro, diametroLasBoquillas, numerodeBoquillas);
 
-            ecuacionM = new ecuacionesRadar().ecuacionM(anguloSimetriaAxial, longitudPotencialdelNucleo, diametroLasBoquillas, distanciadeBoquillasaldonfodelhueco);
             if (variableN.ToString() != "")
                 ecuacionN = variableN;
-            else
-                ecuacionN = new ecuacionesRadar().ecuacionN(ecuacionAV, k, ecuacionM);
 
             //seccion de lectura de wits
 
@@ -689,29 +655,29 @@ namespace Smart_Rig_V1._1
         private void timerGeneral_TickNPT(object sender)
         {
 
-            double tiempoEstimadoPerforacion1 = tripa1; //Valor ingresado por textbox NPT AFE
+            double tiempoEstimadoPerforacion1 = tiempoEstiPerforacion1; //Valor ingresado por textbox NPT AFE
             double tiempoEjecucion = 0; // Valor real de ejecucion
             double tiempoConexionNPT = 0;
             int tiempoEjecucionMove1 = 0;
-            int tiempoEstimadoMove1 = 0; //  de donde sale??
+            int tiempoEstimadoMove1 = int.Parse(tripMove1.ToString()); //  de donde sale??
             int tiempoNPTMove1 = 0;
             int estadoFrague = 0;
             int tiempoEjecucionMove2 = 0;
-            double tiempoEstimadoMove2 = tripa2; // de donde sale??
+            double tiempoEstimadoMove2 = tripMove2; // de donde sale??
             int tiempoNPTMove2 = 0;
             int tiempoEjecucionPerforacion2 = 0;
-            double tiempoEstimadoPerforacion2 = 0; //  de donde sale??
+            double tiempoEstimadoPerforacion2 = tiempoEstiPerforacion2; //  de donde sale??
             int tiempoNPTPerforacion2 = 0;
             double tiempoConexionNPT2 = 0;
             int tiempoEjecucionMove3 = 0;
-            int tiempoEstimadoMove3 = 0; //de donde sale??
+            int tiempoEstimadoMove3 = int.Parse(tripMove3.ToString()); //de donde sale??
             int tiempoNPTMove3 = 0;
             int tiempoEjecucionPerforacion3 = 0;
-            int tiempoEstimadoPerforacion3 = 0; //de donde sale?
+            int tiempoEstimadoPerforacion3 = int.Parse(tiempoEstiPerforacion3.ToString()); //de donde sale?
             int tiempoNPTPerforacion3 = 0;
             int tiempoConexionNPT3 = 0;
             int tiempoEjecucionTYC = 0;
-            int tiempoEstimadoTYC = 0; //de donde sale??
+            int tiempoEstimadoTYC = int.Parse(DaysTyC.ToString()); //de donde sale??
             int tiempoNPTTYC = 0;
 
             while (true)

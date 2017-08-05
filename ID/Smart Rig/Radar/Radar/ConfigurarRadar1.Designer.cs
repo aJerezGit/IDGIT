@@ -60,8 +60,8 @@
             this.metroLabel24 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel23 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel22 = new MetroFramework.Controls.MetroLabel();
-            this.txtDayst = new MetroFramework.Controls.MetroTextBox();
-            this.txtDaysc = new MetroFramework.Controls.MetroTextBox();
+            this.txtDaysT = new MetroFramework.Controls.MetroTextBox();
+            this.txtDaysC = new MetroFramework.Controls.MetroTextBox();
             this.txtMWave3 = new MetroFramework.Controls.MetroTextBox();
             this.txtDLS3 = new MetroFramework.Controls.MetroTextBox();
             this.txtCost3 = new MetroFramework.Controls.MetroTextBox();
@@ -556,8 +556,8 @@
             this.pnlAFE.Controls.Add(this.metroLabel24);
             this.pnlAFE.Controls.Add(this.metroLabel23);
             this.pnlAFE.Controls.Add(this.metroLabel22);
-            this.pnlAFE.Controls.Add(this.txtDayst);
-            this.pnlAFE.Controls.Add(this.txtDaysc);
+            this.pnlAFE.Controls.Add(this.txtDaysT);
+            this.pnlAFE.Controls.Add(this.txtDaysC);
             this.pnlAFE.Controls.Add(this.txtMWave3);
             this.pnlAFE.Controls.Add(this.txtDLS3);
             this.pnlAFE.Controls.Add(this.txtCost3);
@@ -671,69 +671,69 @@
             this.metroLabel22.TabIndex = 72;
             this.metroLabel22.Text = "I";
             // 
-            // txtDayst
+            // txtDaysT
             // 
             // 
             // 
             // 
-            this.txtDayst.CustomButton.Image = null;
-            this.txtDayst.CustomButton.Location = new System.Drawing.Point(73, 1);
-            this.txtDayst.CustomButton.Name = "";
-            this.txtDayst.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtDayst.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtDayst.CustomButton.TabIndex = 1;
-            this.txtDayst.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtDayst.CustomButton.UseSelectable = true;
-            this.txtDayst.CustomButton.Visible = false;
-            this.txtDayst.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.txtDayst.Lines = new string[0];
-            this.txtDayst.Location = new System.Drawing.Point(242, 171);
-            this.txtDayst.MaxLength = 32767;
-            this.txtDayst.Name = "txtDayst";
-            this.txtDayst.PasswordChar = '\0';
-            this.txtDayst.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtDayst.SelectedText = "";
-            this.txtDayst.SelectionLength = 0;
-            this.txtDayst.SelectionStart = 0;
-            this.txtDayst.ShortcutsEnabled = true;
-            this.txtDayst.Size = new System.Drawing.Size(95, 23);
-            this.txtDayst.TabIndex = 71;
-            this.txtDayst.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtDayst.UseSelectable = true;
-            this.txtDayst.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtDayst.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDaysT.CustomButton.Image = null;
+            this.txtDaysT.CustomButton.Location = new System.Drawing.Point(73, 1);
+            this.txtDaysT.CustomButton.Name = "";
+            this.txtDaysT.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtDaysT.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtDaysT.CustomButton.TabIndex = 1;
+            this.txtDaysT.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtDaysT.CustomButton.UseSelectable = true;
+            this.txtDaysT.CustomButton.Visible = false;
+            this.txtDaysT.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtDaysT.Lines = new string[0];
+            this.txtDaysT.Location = new System.Drawing.Point(242, 171);
+            this.txtDaysT.MaxLength = 32767;
+            this.txtDaysT.Name = "txtDaysT";
+            this.txtDaysT.PasswordChar = '\0';
+            this.txtDaysT.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDaysT.SelectedText = "";
+            this.txtDaysT.SelectionLength = 0;
+            this.txtDaysT.SelectionStart = 0;
+            this.txtDaysT.ShortcutsEnabled = true;
+            this.txtDaysT.Size = new System.Drawing.Size(95, 23);
+            this.txtDaysT.TabIndex = 71;
+            this.txtDaysT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDaysT.UseSelectable = true;
+            this.txtDaysT.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtDaysT.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // txtDaysc
-            // 
-            // 
+            // txtDaysC
             // 
             // 
-            this.txtDaysc.CustomButton.Image = null;
-            this.txtDaysc.CustomButton.Location = new System.Drawing.Point(73, 1);
-            this.txtDaysc.CustomButton.Name = "";
-            this.txtDaysc.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtDaysc.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtDaysc.CustomButton.TabIndex = 1;
-            this.txtDaysc.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtDaysc.CustomButton.UseSelectable = true;
-            this.txtDaysc.CustomButton.Visible = false;
-            this.txtDaysc.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.txtDaysc.Lines = new string[0];
-            this.txtDaysc.Location = new System.Drawing.Point(242, 200);
-            this.txtDaysc.MaxLength = 32767;
-            this.txtDaysc.Name = "txtDaysc";
-            this.txtDaysc.PasswordChar = '\0';
-            this.txtDaysc.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtDaysc.SelectedText = "";
-            this.txtDaysc.SelectionLength = 0;
-            this.txtDaysc.SelectionStart = 0;
-            this.txtDaysc.ShortcutsEnabled = true;
-            this.txtDaysc.Size = new System.Drawing.Size(95, 23);
-            this.txtDaysc.TabIndex = 70;
-            this.txtDaysc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtDaysc.UseSelectable = true;
-            this.txtDaysc.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtDaysc.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // 
+            this.txtDaysC.CustomButton.Image = null;
+            this.txtDaysC.CustomButton.Location = new System.Drawing.Point(73, 1);
+            this.txtDaysC.CustomButton.Name = "";
+            this.txtDaysC.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtDaysC.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtDaysC.CustomButton.TabIndex = 1;
+            this.txtDaysC.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtDaysC.CustomButton.UseSelectable = true;
+            this.txtDaysC.CustomButton.Visible = false;
+            this.txtDaysC.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtDaysC.Lines = new string[0];
+            this.txtDaysC.Location = new System.Drawing.Point(242, 200);
+            this.txtDaysC.MaxLength = 32767;
+            this.txtDaysC.Name = "txtDaysC";
+            this.txtDaysC.PasswordChar = '\0';
+            this.txtDaysC.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDaysC.SelectedText = "";
+            this.txtDaysC.SelectionLength = 0;
+            this.txtDaysC.SelectionStart = 0;
+            this.txtDaysC.ShortcutsEnabled = true;
+            this.txtDaysC.Size = new System.Drawing.Size(95, 23);
+            this.txtDaysC.TabIndex = 70;
+            this.txtDaysC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDaysC.UseSelectable = true;
+            this.txtDaysC.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtDaysC.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // txtMWave3
             // 
@@ -1746,8 +1746,8 @@
         private MetroFramework.Controls.MetroLabel metroLabel24;
         private MetroFramework.Controls.MetroLabel metroLabel23;
         private MetroFramework.Controls.MetroLabel metroLabel22;
-        private MetroFramework.Controls.MetroTextBox txtDayst;
-        private MetroFramework.Controls.MetroTextBox txtDaysc;
+        private MetroFramework.Controls.MetroTextBox txtDaysT;
+        private MetroFramework.Controls.MetroTextBox txtDaysC;
         private MetroFramework.Controls.MetroTextBox txtMWave3;
         private MetroFramework.Controls.MetroTextBox txtDLS3;
         private MetroFramework.Controls.MetroTextBox txtCost3;

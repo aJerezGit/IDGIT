@@ -209,7 +209,7 @@ namespace pyosoft
                     }
 
                     sw.WriteLine("txtVariableN_0,92");
-                    //variable inamovible, antes existia ahora es fija
+                    //variable inamovible, antes existia ahora es fija y ahora agregarla :v
                     sw.WriteLine("txtTorqueBroca_0,20");
 
 
