@@ -102,14 +102,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Smart Rig V1.1.exe" size="656864">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Smart Rig V1.1.exe" size="657376">
       <assemblyIdentity name="Smart Rig V1.1" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>AvjM7Y73I6FGJvuTR1Nio8lIiIkCF0v2onEO1DIuofA=</dsig:DigestValue>
+        <dsig:DigestValue>J8NnCYVYXTRpAh7QfaQ04kXHF5//kuKH+p1UDJBlx4c=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -133,7 +133,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9onldjrlBYbGZyayFGrn3ILDbe6W3le9TvZ7r4KcBe4=</dsig:DigestValue>
+        <dsig:DigestValue>Upn0YGTFUdBYm+ePDYYmxQexYKahoERJxMdKHcV3rvk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

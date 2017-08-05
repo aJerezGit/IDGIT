@@ -23,8 +23,7 @@ namespace Radar
 
         private void frmConfigurarRadar1_Load(object sender, EventArgs e)
         {
-            UsoControles("pnlHMSE2", false);
-            UsoControles("pnlManiobras", false);
+            UsoControles("pnlAFE", false);
         }
 
         private void UsoControles(string nombreControl, bool habilita)
@@ -37,36 +36,10 @@ namespace Radar
             }
         }
         //TODO: putear a omar por que creo nuevos botones y ni siquiera los asigno a las funciones que tenian antes
-
-        private void btnSiguienteBroca_Click(object sender, EventArgs e)
+        
+        private void btnSiguienteProfile_Click(object sender, EventArgs e)
         {
             foreach (Control item in pnlHMSE1.Controls)
-            {
-                if (item is MetroTextBox)
-                {
-                    if (((MetroTextBox)item).Text == "" )
-                    {
-                        MessageBox.Show("Debe ingresar todos los valores del cuadrante.");
-                        return;
-                    }
-                }
-            }
-
-            UsoControles("pnlHMSE1", false);
-            UsoControles("pnlHMSE2", true);
-            UsoControles("pnlManiobras", false);
-        }
-
-        private void btnAtrasHMSE_Click(object sender, EventArgs e)
-        {    
-            UsoControles("pnlManiobras", false);
-            UsoControles("pnlHMSE1", true);
-            UsoControles("pnlHMSE2", false);
-        }
-
-        private void btnSiguienteHMSE_Click(object sender, EventArgs e)
-        {
-            foreach (Control item in pnlHMSE2.Controls)
             {
                 if (item is MetroTextBox)
                 {
@@ -78,21 +51,29 @@ namespace Radar
                 }
             }
 
-            UsoControles("pnlManiobras", true);
             UsoControles("pnlHMSE1", false);
-            UsoControles("pnlHMSE2", false);
+            UsoControles("pnlAFE", true);
         }
 
-        private void btnAtrasPipeMove_Click(object sender, EventArgs e)
+
+
+        private void btnAtrasProfile_Click(object sender, EventArgs e)
         {
-            UsoControles("pnlManiobras", false);
-            UsoControles("pnlHMSE1", false);
-            UsoControles("pnlHMSE2", true);
+            // configuraRadar2 = new frmConfigurarRadar2();
+            //configuraRadar2.Show();
+            //this.Hide();
         }
 
-        private void btnSiguientePipeMove_Click(object sender, EventArgs e)
+        private void btnAtrasAfe_Click(object sender, EventArgs e)
         {
-            foreach (Control item in pnlManiobras.Controls)
+            UsoControles("pnlAFE", false);
+            UsoControles("pnlHMSE1", true);
+        }
+
+
+        private void btnSiguienteAfe_Click(object sender, EventArgs e)
+        {
+            foreach (Control item in pnlAFE.Controls)
             {
                 if (item is MetroTextBox)
                 {
@@ -116,17 +97,7 @@ namespace Radar
                     }
                 }
             }
-            foreach (Control item in pnlHMSE2.Controls)
-            {
-                if (item is MetroTextBox)
-                {
-                    if (((MetroTextBox)item).Text != "")
-                    {
-                        valoresAguardar.Add(item.Name + "_" + item.Text);
-                    }
-                }
-            }
-            foreach (Control item in pnlManiobras.Controls)
+            foreach (Control item in pnlAFE.Controls)
             {
                 if (item is MetroTextBox)
                 {

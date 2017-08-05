@@ -138,11 +138,12 @@ namespace pyosoft
                 bool rllyExists = false;
                 if (!hayInternet)
                 {
-                    conexion = false;
+                    //conexion = false;
+                    resultado = 0;
                 }
                 if (hayInternet)
                 {
-                    if (!conexion)
+                    if (resultado == 0)//(!conexion)
                     {
                         Thread.Sleep(100);
                         rllyExists = NetworkInterface.GetIsNetworkAvailable();
@@ -153,7 +154,7 @@ namespace pyosoft
                         procesoSecundarioMysql.Start();
                     }
                 }
-                resultado = (elementosWits.Length * 100) / 38;
+                //resultado = (elementosWits.Length * 100) / 38;
             }
 
             return Tuple.Create(listaWits, resultado);

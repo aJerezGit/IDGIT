@@ -193,77 +193,77 @@ namespace Smart_Rig_V1._1
                 string[] items = File.ReadAllLines(archivoALeer1);
                 foreach (string itemAseleccionar in items)
                 {
-                    if (itemAseleccionar.Contains("DiametroBroca"))
+                    if (itemAseleccionar.Contains("diameter1"))//DiametroBroca
                     {
                         String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
                         diametro = double.Parse(valorItem[1]);
                     }
 
-                    if (itemAseleccionar.Contains("DiametroBoquillas"))
+                    if (itemAseleccionar.Contains(""))//DiametroBoquillas
                     {
                         String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
                         diametroLasBoquillas = double.Parse(valorItem[1]);
                     }
 
-                    if (itemAseleccionar.Contains("NumeroBoquillas"))
+                    if (itemAseleccionar.Contains(""))//NumeroBoquillas
                     {
                         String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
                         numerodeBoquillas = int.Parse(valorItem[1]);
                     }
 
-                    if (itemAseleccionar.Contains("AnguloChorro"))
+                    if (itemAseleccionar.Contains("DLS1"))//AnguloChorro
                     {
                         String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
                         anguloSimetriaAxial = double.Parse(valorItem[1]);
                     }
 
-                    if (itemAseleccionar.Contains("LongitudNucleo"))
+                    if (itemAseleccionar.Contains("Thickness1"))//LongitudNucleo
                     {
                         String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
                         longitudPotencialdelNucleo = double.Parse(valorItem[1]);
                     }
 
-                    if (itemAseleccionar.Contains("DistanciaFondo"))
+                    if (itemAseleccionar.Contains(""))//DistanciaFondo
                     {
                         String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
                         distanciadeBoquillasaldonfodelhueco = double.Parse(valorItem[1]);
                     }
 
-                    if (itemAseleccionar.Contains("TorqueMotor"))
-                    {
-                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
-                        torqueMax = double.Parse(valorItem[1]);
-                    }
+                    //if (itemAseleccionar.Contains(""))//TorqueMotor
+                    //{
+                    //    String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                    //    torqueMax = double.Parse(valorItem[1]);
+                    //}
 
-                    if (itemAseleccionar.Contains("PresionMotor"))
-                    {
-                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
-                        limitemaximopresiondiferencialMotor = double.Parse(valorItem[1]);
-                    }
+                    //if (itemAseleccionar.Contains(""))//PresionMotor
+                    //{
+                    //    String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                    //    limitemaximopresiondiferencialMotor = double.Parse(valorItem[1]);
+                    //}
 
-                    if (itemAseleccionar.Contains("CaidaPresion"))
-                    {
-                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
-                        caidadePresionsobrelaBroca = double.Parse(valorItem[1]);
-                    }
+                    //if (itemAseleccionar.Contains("Pbit1"))//CaidaPresion
+                    //{
+                    //    String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                    //    caidadePresionsobrelaBroca = double.Parse(valorItem[1]);
+                    //}
 
-                    if (itemAseleccionar.Contains("VelocidadMotor"))
-                    {
-                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
-                        velocidadRotacionMotor = double.Parse(valorItem[1]);
-                    }
+                    //if (itemAseleccionar.Contains("KN1"))//VelocidadMotor
+                    //{
+                    //    String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                    //    velocidadRotacionMotor = double.Parse(valorItem[1]);
+                    //}
 
-                    if (itemAseleccionar.Contains("AreaBoquillas"))
+                    if (itemAseleccionar.Contains(""))//AreaBoquillas
                     {
                         String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
                         areadelasBoquillas = double.Parse(valorItem[1]);
                     }
 
-                    if (itemAseleccionar.Contains("TorqueBroca"))
-                    {
-                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
-                        torqueAplicadoEnLaBroca = double.Parse(valorItem[1]);
-                    }
+                    //if (itemAseleccionar.Contains("TS1"))//TorqueBroca
+                    //{
+                    //    String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                    //    torqueAplicadoEnLaBroca = double.Parse(valorItem[1]);
+                    //}
 
                     if (itemAseleccionar.Contains("VariableN"))
                     {
@@ -271,23 +271,23 @@ namespace Smart_Rig_V1._1
                         variableN = double.Parse(valorItem[1]);
                     }
 
-                    if (itemAseleccionar.Contains("VelocidadBajando"))
-                    {
-                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
-                        VelocidadLimiteBajando = double.Parse(valorItem[1]);
-                    }
+                    //if (itemAseleccionar.Contains("TripSpeed1"))//VelocidadBajando
+                    //{
+                    //    String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                    //    VelocidadLimiteBajando = double.Parse(valorItem[1]);
+                    //}
 
-                    if (itemAseleccionar.Contains("VelocidadSubiendo"))
-                    {
-                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
-                        VelocidadLimiteSubiendo = double.Parse(valorItem[1]);
-                    }
+                    //if (itemAseleccionar.Contains("TripSpeed1"))//VelocidadSubiendo
+                    //{
+                    //    String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                    //    VelocidadLimiteSubiendo = double.Parse(valorItem[1]);
+                    //}
 
-                    if (itemAseleccionar.Contains("ROPmaxLimpieza"))
-                    {
-                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
-                        ROPmaxLimpieza = double.Parse(valorItem[1]);
-                    }
+                    //if (itemAseleccionar.Contains("ROPMax1"))//ROPmaxLimpieza
+                    //{
+                    //    String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                    //    ROPmaxLimpieza = double.Parse(valorItem[1]);
+                    //}
 
                 }
             }
@@ -320,7 +320,47 @@ namespace Smart_Rig_V1._1
                         String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
                         tripa2 = double.Parse(valorItem[1]);
                     }
+                    if (itemAseleccionar.Contains("Tmax1"))//TorqueMotor
+                    {
+                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                        torqueMax = double.Parse(valorItem[1]);
+                    }
+                    if (itemAseleccionar.Contains("Pmax1"))//PresionMotor
+                    {
+                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                        limitemaximopresiondiferencialMotor = double.Parse(valorItem[1]);
+                    }
+                    if (itemAseleccionar.Contains("Pbit1"))//CaidaPresion
+                    {
+                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                        caidadePresionsobrelaBroca = double.Parse(valorItem[1]);
+                    }
+                    if (itemAseleccionar.Contains("KN1"))//VelocidadMotor
+                    {
+                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                        velocidadRotacionMotor = double.Parse(valorItem[1]);
+                    }
+                    if (itemAseleccionar.Contains("TS1"))//TorqueBroca
+                    {
+                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                        torqueAplicadoEnLaBroca = double.Parse(valorItem[1]);
+                    }
+                    if (itemAseleccionar.Contains("TripSpeed1"))//VelocidadBajando
+                    {
+                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                        VelocidadLimiteBajando = double.Parse(valorItem[1]);
+                    }
 
+                    if (itemAseleccionar.Contains("TripSpeed1"))//VelocidadSubiendo
+                    {
+                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                        VelocidadLimiteSubiendo = double.Parse(valorItem[1]);
+                    }
+                    if (itemAseleccionar.Contains("ROPMax1"))//ROPmaxLimpieza
+                    {
+                        String[] valorItem = itemAseleccionar.Split(new char[] { '_' });
+                        ROPmaxLimpieza = double.Parse(valorItem[1]);
+                    }
                 }
             }
             //limites HMSE

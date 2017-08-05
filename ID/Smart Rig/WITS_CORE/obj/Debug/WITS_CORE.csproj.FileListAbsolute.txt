@@ -42,3 +42,13 @@ C:\Users\Andre\Desktop\ID\Smart Rig\WITS_CORE\bin\Debug\MySql.Data.xml
 C:\Users\Andre\Desktop\ID\Smart Rig\WITS_CORE\obj\Debug\WITS_CORE.csprojResolveAssemblyReference.cache
 C:\Users\Andre\Desktop\ID\Smart Rig\WITS_CORE\obj\Debug\WITS_CORE.dll
 C:\Users\Andre\Desktop\ID\Smart Rig\WITS_CORE\obj\Debug\WITS_CORE.pdb
+C:\Users\Andre\Source\Repos\IDGIT\ID\Smart Rig\WITS_CORE\bin\Debug\WITS_CORE.dll
+C:\Users\Andre\Source\Repos\IDGIT\ID\Smart Rig\WITS_CORE\bin\Debug\WITS_CORE.pdb
+C:\Users\Andre\Source\Repos\IDGIT\ID\Smart Rig\WITS_CORE\bin\Debug\MetroFramework.Design.dll
+C:\Users\Andre\Source\Repos\IDGIT\ID\Smart Rig\WITS_CORE\bin\Debug\MetroFramework.dll
+C:\Users\Andre\Source\Repos\IDGIT\ID\Smart Rig\WITS_CORE\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Andre\Source\Repos\IDGIT\ID\Smart Rig\WITS_CORE\bin\Debug\MySql.Data.dll
+C:\Users\Andre\Source\Repos\IDGIT\ID\Smart Rig\WITS_CORE\bin\Debug\MySql.Data.xml
+C:\Users\Andre\Source\Repos\IDGIT\ID\Smart Rig\WITS_CORE\obj\Debug\WITS_CORE.csprojResolveAssemblyReference.cache
+C:\Users\Andre\Source\Repos\IDGIT\ID\Smart Rig\WITS_CORE\obj\Debug\WITS_CORE.dll
+C:\Users\Andre\Source\Repos\IDGIT\ID\Smart Rig\WITS_CORE\obj\Debug\WITS_CORE.pdb

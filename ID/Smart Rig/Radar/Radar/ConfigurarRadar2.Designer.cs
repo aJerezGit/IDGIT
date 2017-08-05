@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlAFE = new System.Windows.Forms.Panel();
+            this.pnlDHT = new System.Windows.Forms.Panel();
             this.btnSiguienteDHT = new MetroFramework.Controls.MetroButton();
             this.btnAtrasDHT = new MetroFramework.Controls.MetroButton();
             this.metroLabel24 = new MetroFramework.Controls.MetroLabel();
@@ -72,58 +72,58 @@
             this.txtTmax1 = new MetroFramework.Controls.MetroTextBox();
             this.txtKN1 = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
-            this.pnlAFE.SuspendLayout();
+            this.pnlDHT.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlAFE
+            // pnlDHT
             // 
-            this.pnlAFE.Controls.Add(this.btnSiguienteDHT);
-            this.pnlAFE.Controls.Add(this.btnAtrasDHT);
-            this.pnlAFE.Controls.Add(this.metroLabel24);
-            this.pnlAFE.Controls.Add(this.metroLabel23);
-            this.pnlAFE.Controls.Add(this.metroLabel22);
-            this.pnlAFE.Controls.Add(this.txtROPMax3);
-            this.pnlAFE.Controls.Add(this.txtPbit3);
-            this.pnlAFE.Controls.Add(this.txtTS3);
-            this.pnlAFE.Controls.Add(this.txtn3);
-            this.pnlAFE.Controls.Add(this.txtTFA3);
-            this.pnlAFE.Controls.Add(this.txtWOBe3);
-            this.pnlAFE.Controls.Add(this.txtPmax3);
-            this.pnlAFE.Controls.Add(this.txtTmax3);
-            this.pnlAFE.Controls.Add(this.txtKN3);
-            this.pnlAFE.Controls.Add(this.txtROPMax2);
-            this.pnlAFE.Controls.Add(this.txtPbit2);
-            this.pnlAFE.Controls.Add(this.txtTS2);
-            this.pnlAFE.Controls.Add(this.txtn2);
-            this.pnlAFE.Controls.Add(this.txtTFA2);
-            this.pnlAFE.Controls.Add(this.txtWOBe2);
-            this.pnlAFE.Controls.Add(this.txtPmax2);
-            this.pnlAFE.Controls.Add(this.txtTmax2);
-            this.pnlAFE.Controls.Add(this.txtKN2);
-            this.pnlAFE.Controls.Add(this.metroLabel21);
-            this.pnlAFE.Controls.Add(this.metroLabel20);
-            this.pnlAFE.Controls.Add(this.metroLabel19);
-            this.pnlAFE.Controls.Add(this.metroLabel17);
-            this.pnlAFE.Controls.Add(this.metroLabel16);
-            this.pnlAFE.Controls.Add(this.metroLabel15);
-            this.pnlAFE.Controls.Add(this.metroLabel14);
-            this.pnlAFE.Controls.Add(this.metroLabel13);
-            this.pnlAFE.Controls.Add(this.metroLabel12);
-            this.pnlAFE.Controls.Add(this.metroLabel11);
-            this.pnlAFE.Controls.Add(this.txtROPMax1);
-            this.pnlAFE.Controls.Add(this.txtPbit1);
-            this.pnlAFE.Controls.Add(this.txtTS1);
-            this.pnlAFE.Controls.Add(this.txtn1);
-            this.pnlAFE.Controls.Add(this.txtTFA1);
-            this.pnlAFE.Controls.Add(this.txtWOBe1);
-            this.pnlAFE.Controls.Add(this.txtPmax1);
-            this.pnlAFE.Controls.Add(this.txtTmax1);
-            this.pnlAFE.Controls.Add(this.txtKN1);
-            this.pnlAFE.Controls.Add(this.metroLabel18);
-            this.pnlAFE.Location = new System.Drawing.Point(50, 100);
-            this.pnlAFE.Name = "pnlAFE";
-            this.pnlAFE.Size = new System.Drawing.Size(1080, 331);
-            this.pnlAFE.TabIndex = 0;
+            this.pnlDHT.Controls.Add(this.btnSiguienteDHT);
+            this.pnlDHT.Controls.Add(this.btnAtrasDHT);
+            this.pnlDHT.Controls.Add(this.metroLabel24);
+            this.pnlDHT.Controls.Add(this.metroLabel23);
+            this.pnlDHT.Controls.Add(this.metroLabel22);
+            this.pnlDHT.Controls.Add(this.txtROPMax3);
+            this.pnlDHT.Controls.Add(this.txtPbit3);
+            this.pnlDHT.Controls.Add(this.txtTS3);
+            this.pnlDHT.Controls.Add(this.txtn3);
+            this.pnlDHT.Controls.Add(this.txtTFA3);
+            this.pnlDHT.Controls.Add(this.txtWOBe3);
+            this.pnlDHT.Controls.Add(this.txtPmax3);
+            this.pnlDHT.Controls.Add(this.txtTmax3);
+            this.pnlDHT.Controls.Add(this.txtKN3);
+            this.pnlDHT.Controls.Add(this.txtROPMax2);
+            this.pnlDHT.Controls.Add(this.txtPbit2);
+            this.pnlDHT.Controls.Add(this.txtTS2);
+            this.pnlDHT.Controls.Add(this.txtn2);
+            this.pnlDHT.Controls.Add(this.txtTFA2);
+            this.pnlDHT.Controls.Add(this.txtWOBe2);
+            this.pnlDHT.Controls.Add(this.txtPmax2);
+            this.pnlDHT.Controls.Add(this.txtTmax2);
+            this.pnlDHT.Controls.Add(this.txtKN2);
+            this.pnlDHT.Controls.Add(this.metroLabel21);
+            this.pnlDHT.Controls.Add(this.metroLabel20);
+            this.pnlDHT.Controls.Add(this.metroLabel19);
+            this.pnlDHT.Controls.Add(this.metroLabel17);
+            this.pnlDHT.Controls.Add(this.metroLabel16);
+            this.pnlDHT.Controls.Add(this.metroLabel15);
+            this.pnlDHT.Controls.Add(this.metroLabel14);
+            this.pnlDHT.Controls.Add(this.metroLabel13);
+            this.pnlDHT.Controls.Add(this.metroLabel12);
+            this.pnlDHT.Controls.Add(this.metroLabel11);
+            this.pnlDHT.Controls.Add(this.txtROPMax1);
+            this.pnlDHT.Controls.Add(this.txtPbit1);
+            this.pnlDHT.Controls.Add(this.txtTS1);
+            this.pnlDHT.Controls.Add(this.txtn1);
+            this.pnlDHT.Controls.Add(this.txtTFA1);
+            this.pnlDHT.Controls.Add(this.txtWOBe1);
+            this.pnlDHT.Controls.Add(this.txtPmax1);
+            this.pnlDHT.Controls.Add(this.txtTmax1);
+            this.pnlDHT.Controls.Add(this.txtKN1);
+            this.pnlDHT.Controls.Add(this.metroLabel18);
+            this.pnlDHT.Location = new System.Drawing.Point(50, 100);
+            this.pnlDHT.Name = "pnlDHT";
+            this.pnlDHT.Size = new System.Drawing.Size(1080, 331);
+            this.pnlDHT.TabIndex = 0;
             // 
             // btnSiguienteDHT
             // 
@@ -1153,19 +1153,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 600);
-            this.Controls.Add(this.pnlAFE);
+            this.Controls.Add(this.pnlDHT);
             this.Name = "frmConfigurarRadar2";
             this.Text = "Configuracion Sistema Radar";
             this.Load += new System.EventHandler(this.frmConfigurarRadar2_Load);
-            this.pnlAFE.ResumeLayout(false);
-            this.pnlAFE.PerformLayout();
+            this.pnlDHT.ResumeLayout(false);
+            this.pnlDHT.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlAFE;
+        private System.Windows.Forms.Panel pnlDHT;
         private MetroFramework.Controls.MetroButton btnSiguienteDHT;
         private MetroFramework.Controls.MetroButton btnAtrasDHT;
         private MetroFramework.Controls.MetroLabel metroLabel24;

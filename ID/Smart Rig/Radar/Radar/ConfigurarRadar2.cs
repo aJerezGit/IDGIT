@@ -36,7 +36,7 @@ namespace Radar
 
         private void btnSiguienteAFE_Click(object sender, EventArgs e)
         {
-            foreach (Control item in pnlAFE.Controls)
+            foreach (Control item in pnlDHT.Controls)
             {
                 if (item is Panel)
                 {
@@ -56,7 +56,7 @@ namespace Radar
 
             List<string> valoresAguardar = new List<string>();
 
-            foreach (Control item in pnlAFE.Controls)
+            foreach (Control item in pnlDHT.Controls)
             {
                 if (item is Panel)
                 {

@@ -108,3 +108,10 @@ C:\Users\Andre\Desktop\ID\Smart Rig\Radar\Radar\bin\Debug\Radar.exe.manifest
 C:\Users\Andre\Desktop\ID\Smart Rig\Radar\Radar\bin\Debug\Radar.application
 C:\Users\Andre\Desktop\ID\Smart Rig\Radar\Radar\obj\Debug\Radar.exe.manifest
 C:\Users\Andre\Desktop\ID\Smart Rig\Radar\Radar\obj\Debug\Radar.application
+C:\Users\Andre\Source\Repos\IDGIT\ID\Smart Rig\Radar\Radar\obj\Debug\Radar.csprojResolveAssemblyReference.cache
+C:\Users\Andre\Source\Repos\IDGIT\ID\Smart Rig\Radar\Radar\obj\Debug\Radar.frmConfigurarRadar2.resources
+C:\Users\Andre\Source\Repos\IDGIT\ID\Smart Rig\Radar\Radar\obj\Debug\Radar.ConfigurarRadar1.resources
+C:\Users\Andre\Source\Repos\IDGIT\ID\Smart Rig\Radar\Radar\obj\Debug\Radar.Properties.Resources.resources
+C:\Users\Andre\Source\Repos\IDGIT\ID\Smart Rig\Radar\Radar\obj\Debug\Radar.csproj.GenerateResource.Cache
+C:\Users\Andre\Source\Repos\IDGIT\ID\Smart Rig\Radar\Radar\obj\Debug\Radar.exe
+C:\Users\Andre\Source\Repos\IDGIT\ID\Smart Rig\Radar\Radar\obj\Debug\Radar.pdb
