@@ -245,10 +245,6 @@
             this.btnTiempoReal2 = new System.Windows.Forms.Button();
             this.btnRadar = new System.Windows.Forms.Button();
             this.PuertoSerial = new System.IO.Ports.SerialPort(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblSerialStatus = new System.Windows.Forms.Label();
-            this.lblInternetStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.pnlWits11.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -5719,51 +5715,11 @@
             this.btnRadar.UseVisualStyleBackColor = true;
             this.btnRadar.Click += new System.EventHandler(this.btnRadar_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(306, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 97;
-            this.label1.Text = "Serial Port:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(481, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 13);
-            this.label2.TabIndex = 98;
-            this.label2.Text = "Internet:";
-            // 
-            // lblSerialStatus
-            // 
-            this.lblSerialStatus.AutoSize = true;
-            this.lblSerialStatus.Location = new System.Drawing.Point(370, 33);
-            this.lblSerialStatus.Name = "lblSerialStatus";
-            this.lblSerialStatus.Size = new System.Drawing.Size(59, 13);
-            this.lblSerialStatus.TabIndex = 99;
-            this.lblSerialStatus.Text = "Connected";
-            // 
-            // lblInternetStatus
-            // 
-            this.lblInternetStatus.AutoSize = true;
-            this.lblInternetStatus.Location = new System.Drawing.Point(533, 33);
-            this.lblInternetStatus.Name = "lblInternetStatus";
-            this.lblInternetStatus.Size = new System.Drawing.Size(59, 13);
-            this.lblInternetStatus.TabIndex = 100;
-            this.lblInternetStatus.Text = "Connected";
-            // 
             // Tiempo_Real
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 562);
-            this.Controls.Add(this.lblInternetStatus);
-            this.Controls.Add(this.lblSerialStatus);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRadar);
             this.Controls.Add(this.btnTiempoReal2);
             this.Controls.Add(this.bntIniciar);
@@ -5784,7 +5740,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -6006,9 +5961,5 @@
         private System.Windows.Forms.Button btnTiempoReal2;
         private System.Windows.Forms.Button bntIniciar;
         private System.IO.Ports.SerialPort PuertoSerial;
-        private System.Windows.Forms.Label lblInternetStatus;
-        private System.Windows.Forms.Label lblSerialStatus;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
     }
 }

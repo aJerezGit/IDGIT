@@ -138,24 +138,22 @@ namespace pyosoft
                 bool rllyExists = false;
                 if (!hayInternet)
                 {
-                    //conexion = false;
-                    resultado = 0;
+                    conexion = false;
                 }
                 if (hayInternet)
                 {
-                    if (resultado == 0)//(!conexion)
+                    if (!conexion)
                     {
                         Thread.Sleep(100);
                         rllyExists = NetworkInterface.GetIsNetworkAvailable();
                     }
                     if (rllyExists)
                     {
-                        resultado = 1;
                         procesoSecundarioMysql = new Thread(() => AD_protocoloWits.AgregarMysql(listaWits, cadenaConexionMysql, error));
                         procesoSecundarioMysql.Start();
                     }
                 }
-                //resultado = (elementosWits.Length * 100) / 38;
+                resultado = (elementosWits.Length * 100) / 38;
             }
 
             return Tuple.Create(listaWits, resultado);
