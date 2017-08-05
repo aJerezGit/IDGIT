@@ -117,6 +117,8 @@ namespace Smart_Rig_V1._1
                     //Thread.Sleep(250);
                     datosSerial = PuertoSerial.ReadExisting();
 
+                    lblSerialStatus.Text = "Connected";
+
                     string[] valor1 = datosSerial.Split(separadorItems, StringSplitOptions.None);
                     foreach (string l in valor1)
                     {
@@ -135,7 +137,11 @@ namespace Smart_Rig_V1._1
                                 //lblTotalDatos.Text = resultado.Item2.ToString() + "%";
 
                                 mensajeMostrar = true;
-
+                                lblInternetStatus.Text = "Connected";
+                            }
+                            else
+                            {
+                                lblInternetStatus.Text = "Disconnected";
                             }
                         }
 
@@ -168,6 +174,7 @@ namespace Smart_Rig_V1._1
                 {
                     AutoClosingMessageBox.Show("Error al conectar el puerto serial. " + ex.Message + "Intentando Conectar nuevamente...", "Desconexión", 5000);
                     mensajeMostrar = false;
+                    lblSerialStatus.Text = "Disconnected";
                 }
                 IniciarProceso(puertoGeneral, baudGeneral);
 

@@ -137,3 +137,6 @@ C:\Users\Andre\Desktop\ID\Smart Rig\Smart Rig V1.1\bin\Debug\Smart Rig V1.1.exe.
 C:\Users\Andre\Desktop\ID\Smart Rig\Smart Rig V1.1\bin\Debug\Smart Rig V1.1.application
 C:\Users\Andre\Desktop\ID\Smart Rig\Smart Rig V1.1\obj\Debug\Smart Rig V1.1.exe.manifest
 C:\Users\Andre\Desktop\ID\Smart Rig\Smart Rig V1.1\obj\Debug\Smart Rig V1.1.application
+C:\Users\Andre\Source\Repos\IDGIT\ID\Smart Rig\Smart Rig V1.1\bin\Debug\Smart Rig V1.1.exe.config
+C:\Users\Andre\Source\Repos\IDGIT\ID\Smart Rig\Smart Rig V1.1\obj\Debug\Smart Rig V1.1.exe
+C:\Users\Andre\Source\Repos\IDGIT\ID\Smart Rig\Smart Rig V1.1\obj\Debug\Smart Rig V1.1.pdb
