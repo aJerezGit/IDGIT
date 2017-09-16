@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace WITS_CORE
 {
     public class ecuacionesRadar
-    {
+    {/*
         public double  ecuacionAV(double diametro, double diametrodelasBoquillas, int numerodeBoquillas)
         {
             double ecuacionAV2 = 0;
@@ -57,51 +57,68 @@ namespace WITS_CORE
             ecuacionWOBe = wits0117 - ecuacionWOBe;
             return ecuacionWOBe;
         }
-
-        public double ecuacionMSE(double torqueMax, double limitemaximopresiondiferencialMotor, double wits0171, double wits0119, double velocidadRotacionMotor, double wits0130, double wits0120,
-                               double diametro, double wits0113, double wits0117)
+        
+        public double ecuacionMSE(double HMSE, double ecuacionN, double caidadePresionsobrelaBroca, double wits0130)
         {
-            double MSE1 = (torqueMax / limitemaximopresiondiferencialMotor);
-            MSE1 = MSE1 * wits0171;
-            MSE1 = MSE1 + wits0119;
-            double MSE2 = (velocidadRotacionMotor * wits0130);
-            MSE2 = MSE2 + wits0120;
-            MSE2 = MSE2 * 480;
-            double MSE3 = Math.Pow(diametro, 2);
-            MSE3 = MSE3 * wits0113;
-            double MSE4 = MSE2 * MSE1;
-            MSE4 = MSE4 / MSE3;
-            double MSE5 = 4 * wits0117;
-            MSE5 = MSE5 / (Math.PI * (Math.Pow(diametro, 2)));
-            double MSEResultante = MSE5 + MSE4;
-            return MSEResultante;
-            
-        }
-
-        //TODO: Hace falta la ecuaciontb
-        public double ecuacionHMSE(double torqueMax, double limitemaximopresiondiferencialMotor, double ecuacionN, double caidadePresionsobrelaBroca,
-                               double wits0130, double velocidadRotacionMotor, double wits0120, double areadelasBoquillas, double wits0113, double ecuacionWOBe,
-                               double torqueAplicadoEnLaBroca, double wits0119, double wits0171)
-        {
-            double HMSE1 = torqueMax / limitemaximopresiondiferencialMotor;
-            HMSE1 = HMSE1 * wits0171;
-            double ecuaciontb = (torqueAplicadoEnLaBroca * wits0119)*wits0119;
-            HMSE1 = HMSE1 + ecuaciontb;
             double HMSE2 = 1154 * ecuacionN;
             HMSE2 = HMSE2 * caidadePresionsobrelaBroca;
             HMSE2 = HMSE2 * wits0130;
-            double HMSE3 = HMSE1 + HMSE2;
-            double HMSE4 = velocidadRotacionMotor * wits0130;
-            HMSE4 = HMSE4 + wits0120;
-            double HMSE5 = ((Math.PI) * 120);
-            HMSE5 = HMSE5 * HMSE4;
-            HMSE5 = HMSE5 * HMSE3;
-            double HMSE6 = areadelasBoquillas * wits0113;
-            double HMSE7 = HMSE5 / HMSE6;
-            double HMSE8 = ecuacionWOBe / areadelasBoquillas;
-            double HMSEresultante = HMSE8 + HMSE7;
 
-            return HMSEresultante;
+            double resultado = HMSE - HMSE2;
+            return resultado;
+
+        }
+*/
+        //TODO: Hace falta la ecuaciontb
+        public List <double> ecuacionHMSE(double torqueMax, double limitemaximopresiondiferencialMotor, double ecuacionN, double caidadePresionsobrelaBroca,
+                               double wits0130, double velocidadRotacionMotor, double wits0120, double areadelasBoquillas, double wits0113,
+                               double torqueAplicadoEnLaBroca, double wits0119, double wits0171, double wits0117)
+        {
+            double MSETotal = 0;
+            double HMSETotal = 0;
+            List<double> resultado = new List<double>();
+            if (velocidadRotacionMotor.ToString() == "0")
+                 {
+                double MSE1 = wits0117 / areadelasBoquillas;
+                double MSE2 = ((Math.PI) * 120);
+                double MSE3 = MSE2 * wits0120;
+                double MSE4 = MSE3 * wits0119;
+                double MSE5 = areadelasBoquillas * wits0113;
+                double MSE6 = MSE4 / MSE5;
+                MSETotal = MSE1 + MSE6;
+                double HMSE1 = areadelasBoquillas * wits0113;
+                double HMSE2 = 1154 * ecuacionN;
+                double HMSE3 = caidadePresionsobrelaBroca * HMSE2;
+                double HMSE4 = HMSE3 * wits0130;
+                double HMSE5 = HMSE4 / HMSE1;
+                HMSETotal = MSETotal + HMSE5;
+                resultado.Add(MSETotal);
+                resultado.Add(HMSETotal);
+            }
+            else
+            {
+                double MSE1 = wits0117 / areadelasBoquillas;
+                double MSE2 = velocidadRotacionMotor * wits0130;
+                double MSE3 = MSE2 + wits0120;
+                double MSE4 = torqueMax / limitemaximopresiondiferencialMotor;
+                double MSE5 = MSE4 * wits0171;
+                double MSE6 = MSE3 * MSE5;
+                double MSE7 = ((Math.PI) * 120);
+                double MSE8 = MSE7 * MSE6;
+                double MSE9 = areadelasBoquillas * wits0113;
+                double MSE10 = MSE8 / MSE9;
+                MSETotal = MSE10 + MSE1;
+                double HMSE1 = areadelasBoquillas * wits0113;
+                double HMSE2 = 1154 * ecuacionN;
+                double HMSE3 = caidadePresionsobrelaBroca * HMSE2;
+                double HMSE4 = HMSE3 * wits0130;
+                double HMSE5 = HMSE4 / HMSE1;
+                HMSETotal = MSETotal + HMSE5;
+                resultado.Add(MSETotal);
+                resultado.Add(HMSETotal);
+
+            }
+            return resultado;
         }
 
     }

@@ -195,6 +195,9 @@ namespace Smart_Rig_V1._1
 
             int guardar = new AD_protocoloWits().guardarConfiguracionWits(nombreConfigurador, valoresAguardar);
 
+            Tiempo_Real tiempoReal = new Tiempo_Real();
+            tiempoReal.Show();
+
             ConfigurarRadar1 configuraRadar1 = new ConfigurarRadar1();
             configuraRadar1.Show();
 

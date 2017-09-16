@@ -90,14 +90,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Radar.exe" size="38880">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Radar.exe" size="57824">
       <assemblyIdentity name="Radar" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9bbT8OKglnXAPRsy5YyZ655r+VJD8mHIU+aEpTVnliQ=</dsig:DigestValue>
+        <dsig:DigestValue>e2Zohql6BqW7Y5OTC/BX9q078K0X7u4twcBe3bf/fIU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -114,14 +114,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WITS_CORE.dll" size="18432">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WITS_CORE.dll" size="17920">
       <assemblyIdentity name="WITS_CORE" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9onldjrlBYbGZyayFGrn3ILDbe6W3le9TvZ7r4KcBe4=</dsig:DigestValue>
+        <dsig:DigestValue>79C9ysXqwY5cpnnvhP43ZwrUY5VxqAnjIOFGYwX+qPI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

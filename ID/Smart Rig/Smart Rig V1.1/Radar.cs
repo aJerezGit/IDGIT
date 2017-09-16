@@ -86,9 +86,11 @@ namespace Smart_Rig_V1._1
         double tiempoEstiPerforacion3 = 0;
         double wits0112Anterior;
         double DaysT, DaysC, DaysTyC;
+        double tiempoEjecucion = 0; // Valor real de ejecucion
 
         //valores influx
         private double Wits0126Anterior = 0; //Canal 0127 anterior
+        private double Wits0126AnterioriNFLUX = 0;
         private double Wits0128Anterior = 0; //Canal 0127 anterior
         private double Wits0121Anterior = 0;//Canal 0121 anterior
         private double Wits0130Anterior = 0;//Canal 0130 anterior
@@ -108,6 +110,7 @@ namespace Smart_Rig_V1._1
         double wits0128;
         double limiteInteriorINFLUX = 0;
         double limiteExteriorINFLUX = 0;
+        double volumenTotalINFLUX = 0;
 
         //valores loss
         int tiempoAlarmaLOSS;
@@ -116,10 +119,33 @@ namespace Smart_Rig_V1._1
         int tiempoAlarmaAnteriorLOSS2;
         double limiteInteriorLOSS = 0;
         double limiteExteriorLOSS = 0;
+        double volumenTotalLOSS = 0;
 
-
-
+        //valores tight
+        double Wits0119Anterior = 0;
+        int tiempoAlarmaTIGHTT1 = 0;
+        int tiempoAlarmaTIGHTT2 = 0;
+        double limiteInteriorTIGHT = 0;
+        double limiteExteriorTIGHT = 0;
+        double pendienteMAnterior = 0;
+        double pendienteMExterior = 0;
+        double wits0121RestauracionTight = 0;
+        double wits0119RestauracionTight = 0;
+        double Wits0121AnteriorTight = 0;
+        double Wits0119AnteriorTight = 0;
+        double Wits0130AnteriorTight = 0;
         //pipe move
+        int EstadoPIPE = 0;
+        double Wits0108Inicial = 0;
+        int tiempoPIPE = 0;
+        int tiempoAnteriorPIPE = 0;
+        int tiempoAlarmaPipe1 = 0;
+        int tiempoAlarmaPipe2 = 0;
+        int tiempoAlarmaPipe3 = 0;
+        int tiempoAlarmaPipe4 = 0;
+        int EstadoPIPE2 = 0;
+
+
 
         private double wits0110 = 0;//Canal correspondiente al 0110
         //private double Wits0113 = 0;//Canal correspondiente al 0113
@@ -171,7 +197,10 @@ namespace Smart_Rig_V1._1
                 //pipe move
                 trNPT = new Thread(timerGeneral_TickLOSS);
                 trNPT.Start();
-                
+                //tight
+                trNPT = new Thread(TimerGeneral_TickTight);
+                trNPT.Start();
+
 
             }
             else
@@ -334,7 +363,7 @@ namespace Smart_Rig_V1._1
                 }
             }
             //limites HMSE
-            double Porcentaje = ropa1 * 0.3;
+            double Porcentaje = ropa1 * 0.1;
             
             limiteInteriorHMSE = ropa1 + Porcentaje;
             limiteExteriorHMSE = ropa1 - Porcentaje;
@@ -366,18 +395,27 @@ namespace Smart_Rig_V1._1
             {
                 if (!SpComunicacion.IsOpen)
                     SpComunicacion.Open();
-                string[] separadorItems = { "&&", "!!" };
-                string[] stringSeparators = new string[] { "\r\n" };
+                //string[] separadorItems = { "&&", "!!" };
+                string[] stringSeparators2 = new string[] { "\r\n&&" };
+                string[] stringSeparators3 = new string[] { "!!" };
 
+                List<String> datosAServidor = new List<string>();
                 int contador = 0;
                 Thread.Sleep(100);
                 string datosSerial = "";
                 //mensajeMostrar = true;
-                //Thread.Sleep(250);
                 datosSerial = SpComunicacion.ReadExisting();
-
-                string[] valor1 = datosSerial.Split(separadorItems, StringSplitOptions.None);
-                foreach (string l in valor1)
+                string[] valor3t = datosSerial.Split(stringSeparators2, StringSplitOptions.None);
+                foreach(string t in valor3t)
+                {                    
+                    if (t.Contains("!!"))
+                    {
+                        string[] valor1 = t.Split(stringSeparators3, StringSplitOptions.None);
+                        if (!valor1[0].Contains("&&"))
+                            datosAServidor.Add(valor1[0]);                        
+                    }
+                }
+                foreach (string l in datosAServidor)
                 {
                     if (l != "" && l.Length > 5)
                     {
@@ -418,7 +456,7 @@ namespace Smart_Rig_V1._1
                                     wits0171 = double.Parse(item.WITvalor);
                                 }
 
-                                if(item.WITitem == "0126")
+                                if (item.WITitem == "0126")
                                 {
                                     wits0126 = double.Parse(item.WITvalor);
                                 }
@@ -434,6 +472,12 @@ namespace Smart_Rig_V1._1
                                 {
                                     wits0112 = double.Parse(item.WITvalor);
                                 }
+                                if (item.WITitem == "0121")
+                                {
+                                    wits0121 = double.Parse(item.WITvalor);
+                                }
+
+
                             }
                         }
 
@@ -444,36 +488,45 @@ namespace Smart_Rig_V1._1
 
                 if (!String.IsNullOrEmpty(wits0113.ToString()) && !String.IsNullOrEmpty(wits0117.ToString()) && !String.IsNullOrEmpty(wits0119.ToString()) && !String.IsNullOrEmpty(wits0120.ToString()) && !String.IsNullOrEmpty(wits0130.ToString()) && !String.IsNullOrEmpty(wits0171.ToString()))
                 {
-                    double ecuacionFJ = new ecuacionesRadar().ecuacionFJ(densidadLodo, wits0130, velocidadSalidaBoquillas);
+                    /*double ecuacionFJ = new ecuacionesRadar().ecuacionFJ(densidadLodo, wits0130, velocidadSalidaBoquillas);
 
                     double ecuacionWOBe = new ecuacionesRadar().ecuacionWOBe(wits0117, ecuacionFJ, ecuacionN);
 
-                    double ecuacionHME = new ecuacionesRadar().ecuacionMSE(torqueMax, limitemaximopresiondiferencialMotor, wits0171, wits0119, velocidadRotacionMotor, wits0130, wits0120, diametro, wits0113, wits0117);
+                    
+                   
+                    double ecuacionHME = new ecuacionesRadar().ecuacionMSE(ecuacionHMSE, ecuacionN, caidadePresionsobrelaBroca, wits0130)*/
+                    List<double> resultadosHMSE = new ecuacionesRadar().ecuacionHMSE(torqueMax, limitemaximopresiondiferencialMotor, ecuacionN, caidadePresionsobrelaBroca,
+                                                                  wits0130, velocidadRotacionMotor, wits0120, areadelasBoquillas, wits0113, torqueAplicadoEnLaBroca,
+                                                                  wits0119, wits0171,wits0117);
 
-                    double ecuacionHMSE = new ecuacionesRadar().ecuacionHMSE(torqueMax, limitemaximopresiondiferencialMotor, ecuacionN, caidadePresionsobrelaBroca,
-                                                                   wits0130, velocidadRotacionMotor, wits0120, areadelasBoquillas, wits0113, ecuacionWOBe, torqueAplicadoEnLaBroca,
-                                                                   wits0119, wits0171);
 
-                    BeginInvoke(new Action(() => txtResultadosEcuaciones.Text = ecuacionFJ.ToString() + "_" + ecuacionWOBe.ToString()), null);
+                    //BeginInvoke(new Action(() => txtResultadosEcuaciones.Text = ecuacionFJ.ToString() + "_" + ecuacionWOBe.ToString()), null);
 
-                    BeginInvoke(new Action(() => txtMSE.Text = ecuacionHME.ToString()), null);
+                    BeginInvoke(new Action(() => txtMSE.Text = string.Format("{0:n2}", (Math.Truncate( resultadosHMSE[0]* 100) / 100))), null);
 
-                    BeginInvoke(new Action(() => txtHMSE.Text = ecuacionHMSE.ToString()), null);
+                    BeginInvoke(new Action(() => txtHMSE.Text = string.Format("{0:n2}", (Math.Truncate(resultadosHMSE[1] * 100) / 100))), null);
 
                     BeginInvoke(new Action(() => txtProfundidadActual.Text = wits0110.ToString()), null);
 
+                    BeginInvoke(new Action(() => txtTVAloss.Text = wits0126.ToString()), null);
+                    BeginInvoke(new Action(() => txtQTight.Text = wits0130.ToString()), null);
+
                     if (wits0108 == wits0110)
                     {
-                        BeginInvoke(new Action(() => pbAnA.Image = Image.FromFile("C:\\Users\\Andre\\Desktop\\ID\\Smart Rig\\Smart Rig V1.1\\img\\yes.png")), null);
+                        BeginInvoke(new Action(() => pbAnA.Image = Image.FromFile("C:\\Users\\Andre\\Desktop\\ID\\Smart Rig\\Smart Rig V1.1\\img\\green2.png")), null);                        
+                        BeginInvoke(new Action(() => txtDRAGtight.Text = wits0117.ToString()), null);
+                        BeginInvoke(new Action(() => txtWOB.Text = "0"), null);
                     }
                     else
                     {
-                        BeginInvoke(new Action(() => pbAnA.Image = Image.FromFile("C:\\Users\\Andre\\Desktop\\ID\\Smart Rig\\Smart Rig V1.1\\img\\no.png")), null);
+                        BeginInvoke(new Action(() => pbAnA.Image = Image.FromFile("C:\\Users\\Andre\\Desktop\\ID\\Smart Rig\\Smart Rig V1.1\\img\\red2.png")), null);
+                        BeginInvoke(new Action(() => txtWOB.Text = wits0117.ToString()), null);
+                        BeginInvoke(new Action(() => txtDRAGtight.Text = "0"), null);
                     }
                 }
 
                 contador += 1;
-                if (contador == 2)
+                if (contador == 1)
                 {
                     SpComunicacion.DiscardInBuffer();
                     contador = 0;
@@ -521,7 +574,7 @@ namespace Smart_Rig_V1._1
 
                 
             }
-            BeginInvoke(new Action(() => txtCOST.Text = CostoActual.ToString()), null);
+            BeginInvoke(new Action(() => txtCOST.Text = string.Format("{0:n2}", (Math.Truncate(CostoActual * 100) / 100))), null);
             BeginInvoke(new Action(() => txtROP.Text = wits0113.ToString()), null);
 
             float[] Resultado = { valorX, valorY };
@@ -534,21 +587,23 @@ namespace Smart_Rig_V1._1
         {
             float valorY = 0;
 
-            if (tiempoLOSS > 1 && tasaPerdidaGanancia < 0)
+            if (tiempoLOSS > 1 && tasaPerdidaGanancia > 0)
             {
                 double R1 = limiteExteriorLOSS - limiteInteriorLOSS;
-                double R2 = tasaPerdidaGanancia;
+                double R2 = wits0126 - limiteInteriorLOSS;
 
-                double porcentaje1 = ((R2 * 100) / -1);
+                double porcentaje1 = 100 - ((R2 * 100) /R1);
+                if (porcentaje1 < 0) { porcentaje1 = 0; }
+                if (porcentaje1 > 100) { porcentaje1 = 100; }
 
-               // double porcentajex = (porcentaje1 * 150) / 100;
-                double porcentajey = (porcentaje1 * -75) / 100;
+                // double porcentajex = (porcentaje1 * 150) / 100;
+                double porcentajey = (porcentaje1 * 75) / 100;
 
                 //valorX = float.Parse(porcentajex.ToString());
                 valorY = float.Parse(porcentajey.ToString()); ;
             }
-
-            float resultado = valorY;
+            float resultado = 0;
+            if (valorY != double.NaN) { resultado = valorY; }
             return resultado;
         }
 
@@ -560,12 +615,15 @@ namespace Smart_Rig_V1._1
             if (tiempoINFLUX > 1 && tasaPerdidaGanancia > 0)
             {
                 double R1 = limiteExteriorINFLUX - limiteInteriorINFLUX;
-                double R2 = tasaPerdidaGanancia;
+                double R2 = wits0126 - limiteInteriorINFLUX;
 
-                double porcentaje1 = ((R2 * 100) / 1);
+                double porcentaje1 = 100 -  ((R2 * 100) / R1);
 
-                double porcentajex = (porcentaje1 * 62) / 100;
-                double porcentajey = (porcentaje1 * 35) / 100;
+                if (porcentaje1 < 0) { porcentaje1 = 0; }
+                if (porcentaje1 > 100) { porcentaje1 = 100; }
+
+                double porcentajex = (porcentaje1 * 72) / 100;
+                double porcentajey = (porcentaje1 * 45) / 100;
 
                 valorX = float.Parse(porcentajex.ToString());
                 valorY = float.Parse(porcentajey.ToString()); ;
@@ -605,10 +663,15 @@ namespace Smart_Rig_V1._1
         {
             float valorY = 0;
 
-            if (tiempoLOSS > 1 && tasaPerdidaGanancia < 0)
+            if (tasaPerdidaGanancia > 0)
             {
-                //double R1 = limiteExteriorHMSE - limiteInteriorHMSE;
-                double R2 = tasaPerdidaGanancia;
+                double pendienteY = (wits0121 - Wits0121Anterior);
+                double pendienteX = (tiempoEjecucion - (tiempoEjecucion - 1));
+                double pendienteM = pendienteY / pendienteX; //Variable del vector que se mueve
+                double limiteInteriorTIGHT = pendienteMAnterior + (pendienteMAnterior * 0.02);//Limite Interior
+
+                double R1 = limiteExteriorTIGHT - limiteInteriorTIGHT;
+                double R2 = pendienteM; // tasaPerdidaGanancia;
 
                 double porcentaje1 = ((R2 * 100) / -1);
 
@@ -617,7 +680,12 @@ namespace Smart_Rig_V1._1
 
                 //valorX = float.Parse(porcentajex.ToString());
                 valorY = float.Parse(porcentajey.ToString()); ;
-            }
+
+                pendienteMAnterior = pendienteM;
+                //Wits0121Anterior = wits0121;
+
+            }            
+
 
             float resultado = valorY;
             return resultado;
@@ -627,11 +695,30 @@ namespace Smart_Rig_V1._1
         {
             float valorX = 0;
             float valorY = 0;
+            double R1 = 0;//(VelocidadLimiteBajando*8)/100 - VelocidadLimiteBajando;
+            double R2 = 0;// wits4781 - VelocidadLimiteBajando;
+            double limiteExterior = 0;
+            double limiteInterior = 0;
+
+            if (wits0108 > wits0108Anterior)
+            {
+               limiteExterior = 0;
+               limiteInterior = VelocidadLimiteSubiendo * (VelocidadLimiteSubiendo * 0.08);
+                R2 = VelocidadLimiteSubiendo;
+                
+            }
+            if (wits0108Anterior > wits0108)
+            {
+                limiteExterior = 0;
+                limiteInterior = VelocidadLimiteBajando * (VelocidadLimiteBajando * 0.08);
+                R2 = VelocidadLimiteBajando;
+            }
+            R1 = limiteExterior - limiteInterior;
+            //aqui hay un pedo arreglarlo manana
+
 
             if (!String.IsNullOrEmpty(VelocidadLimiteBajando.ToString()) && !String.IsNullOrEmpty(VelocidadLimiteBajando.ToString()) && !String.IsNullOrEmpty(wits4781.ToString()))
             {
-                double R1 = (VelocidadLimiteBajando*8)/100 - VelocidadLimiteBajando;
-                double R2 = wits4781 - VelocidadLimiteBajando;
 
                 double porcentaje1 = 100 - ((R2 * 100) / R1);
 
@@ -648,6 +735,8 @@ namespace Smart_Rig_V1._1
 
             float[] Resultado = { valorX, valorY };
 
+            wits0108Anterior = wits0108;
+
             return Resultado;
 
         }
@@ -656,7 +745,7 @@ namespace Smart_Rig_V1._1
         {
 
             double tiempoEstimadoPerforacion1 = tiempoEstiPerforacion1; //Valor ingresado por textbox NPT AFE
-            double tiempoEjecucion = 0; // Valor real de ejecucion
+            
             double tiempoConexionNPT = 0;
             int tiempoEjecucionMove1 = 0;
             int tiempoEstimadoMove1 = int.Parse(tripMove1.ToString()); //  de donde sale??
@@ -923,123 +1012,158 @@ namespace Smart_Rig_V1._1
 
         private void timerGeneral_TickINFLUX(object sender)
         {
-            tiempoINFLUX = tiempoINFLUX + 1; // cada vez que el intervalo configurado en el timer desde el form aumenta un minuto cuando pasan 60000 ms
-            if (diferenciaWits0126Anterior < wits0126)
+            while (true)
             {
-                double diferenciaWits0126 = Wits0126Anterior - wits0126;
-                tasaPerdidaGanancia = ((diferenciaWits0126 + diferenciaWits0126Anterior) / tiempoINFLUX); // formula para determinar la tasa de perdida o ganancia
-                double limitetasaGanancia = (tasaPerdidaGanancia + (tasaPerdidaGanancia * 0.05));
-                // Primera situación disminución de presión.
-                if (Wits0121Anterior > wits0121 && wits0130 == Wits0130Anterior)
+                
+                tiempoINFLUX = tiempoINFLUX + 1; // cada vez que el intervalo configurado en el timer desde el form aumenta un minuto cuando pasan 60000 ms
+                if (Wits0126AnterioriNFLUX < wits0126 && Wits0126AnterioriNFLUX.ToString() != "0")
                 {
-                    tiempoINFLUX = tiempoINFLUX + 1;
-                    lblAlerta.Text = " SPP "; //Direccionado a textbox Alarma
-                    lblAlarma.Text = "SPP " + tiempoINFLUX.ToString() + "minutos"; // Direccionado a textbox Alerta
-
-                }
-                if (Wits0126Anterior < wits0126 && Wits0128Anterior < wits0128 && wits0130 == Wits0130Anterior)
-                {
+                    double diferenciaWits0126 = (Wits0126AnterioriNFLUX - wits0126)*-1;
+                    double volumeINFLUX = (diferenciaWits0126);
+                    tasaPerdidaGanancia = (volumeINFLUX / tiempoINFLUX); // formula para determinar la tasa de perdida o ganancia
+                    double limitetasaGanancia = (tasaPerdidaGanancia + (tasaPerdidaGanancia * 0.05));
+                    // Primera situación disminución de presión.
                     if (Wits0121Anterior > wits0121 && wits0130 == Wits0130Anterior)
                     {
-                        tiempoAlarmaINFLUX2 = tiempoAlarmaINFLUX2 + 1;
-                        lblAlerta.Text = "INF"; //Direccionado a textbox Alarma
-                        lblAlarma.Text = "Influx " + tiempoAlarmaINFLUX2.ToString() + "minutos"; // Direccionado a textbox Alerta
+                        tiempoINFLUX = tiempoINFLUX + 1;
+                        BeginInvoke(new Action(() => lblAlerta.Text = " SPP "), null); //Direccionado a textbox Alarma
+                        BeginInvoke(new Action(() => lblAlarma.Text = "SPP " + tiempoINFLUX.ToString() + "minutos"), null); // Direccionado a textbox Alerta
+
                     }
-                    else
+                    if (Wits0126AnterioriNFLUX < wits0126 && Wits0128Anterior < wits0128 && wits0130 == Wits0130Anterior)
                     {
-                        tiempoAlarmaINFLUX3 = tiempoAlarmaINFLUX3 + 1;
-                        lblAlerta.Text = "AUM"; //Direccionado a textbox Alarma
-                        lblAlarma.Text = "Aumento " + tiempoAlarmaINFLUX3.ToString() + "minutos"; // Direccionado a textbox Alerta
+                        if (Wits0121Anterior > wits0121 && wits0130 == Wits0130Anterior)
+                        {
+                            tiempoAlarmaINFLUX2 = tiempoAlarmaINFLUX2 + 1;
+                            BeginInvoke(new Action(() => lblAlerta.Text = "INF"), null); //Direccionado a textbox Alarma
+                            BeginInvoke(new Action(() => lblAlarma.Text = "Influx " + tiempoAlarmaINFLUX2.ToString() + "minutos"), null) ; // Direccionado a textbox Alerta
+                        }
+                        else
+                        {
+                            tiempoAlarmaINFLUX3 = tiempoAlarmaINFLUX3 + 1;
+                            BeginInvoke(new Action(() => lblAlerta.Text = "AUM"), null); //Direccionado a textbox Alarma
+                            BeginInvoke(new Action(() => lblAlarma.Text = "Aumento " + tiempoAlarmaINFLUX3.ToString() + "minutos"), null); // Direccionado a textbox Alerta
+                        }
                     }
+                    if (limitetasaGanancia > tasaPerdidaGanancia)
+                    {
+                        tiempoAlarmaINFLUX4 = tiempoAlarmaINFLUX4 + 1;
+                        BeginInvoke(new Action(() => lblAlerta.Text = "TVA"), null); //Direccionado a textbox Alarma
+                        BeginInvoke(new Action(() => lblAlarma.Text = "TVA " + tiempoAlarmaINFLUX4.ToString() + "minutos"), null); // Direccionado a textbox Alerta
+                    }
+                    if (tiempoAlarmaAnteriorINFLUX1 == tiempoINFLUX)
+                    {
+                        tiempoINFLUX = 0;
+                    }
+                    if (tiempoAlarmaAnteriorINFLUX2 == tiempoAlarmaINFLUX2)
+                    {
+                        tiempoAlarmaINFLUX2 = 0;
+                    }
+
+                    if (tiempoAlarmaAnteriorINFLUX3 == tiempoAlarmaINFLUX3)
+                    {
+                        tiempoAlarmaINFLUX3 = 0;
+                    }
+
+                    if (tiempoAlarmaAnteriorINFLUX4 == tiempoAlarmaINFLUX4)
+                    {
+                        tiempoAlarmaINFLUX4 = 0;
+                    }
+
+                    BeginInvoke(new Action(() => txtVolumeINFLUX.Text = string.Format("{0:n2}", (Math.Truncate(volumeINFLUX * 100) / 100))), null);
+
+                    diferenciaWits0126 = (Wits0126AnterioriNFLUX - wits0126)*-1;
+                    diferenciaWits0126Anterior = diferenciaWits0126;
+                    tiempoAlarmaAnteriorINFLUX1 = tiempoINFLUX;
+                    tiempoAlarmaAnteriorINFLUX2 = tiempoAlarmaINFLUX2;
+                    tiempoAlarmaAnteriorINFLUX3 = tiempoAlarmaINFLUX3;
+                    tiempoAlarmaAnteriorINFLUX4 = tiempoAlarmaINFLUX4;
+
+                    volumenTotalINFLUX += volumeINFLUX;
+
                 }
-                if (limitetasaGanancia > tasaPerdidaGanancia)
+                else
                 {
-                    tiempoAlarmaINFLUX4 = tiempoAlarmaINFLUX4 + 1;
-                    lblAlerta.Text = "TVA"; //Direccionado a textbox Alarma
-                    lblAlarma.Text = "TVA " + tiempoAlarmaINFLUX4.ToString() + "minutos"; // Direccionado a textbox Alerta
-                }
-                if (tiempoAlarmaAnteriorINFLUX1 == tiempoINFLUX)
-                {
-                    tiempoINFLUX = 0;
-                }
-                if (tiempoAlarmaAnteriorINFLUX2 == tiempoAlarmaINFLUX2)
-                {
-                    tiempoAlarmaINFLUX2 = 0;
+                    BeginInvoke(new Action(() => txtVolumeINFLUX.Text = "0"), null);
                 }
 
-                if (tiempoAlarmaAnteriorINFLUX3 == tiempoAlarmaINFLUX3)
-                {
-                    tiempoAlarmaINFLUX3 = 0;
-                }
+                BeginInvoke(new Action(() => txtRateINFLUX.Text = string.Format("{0:n2}", (Math.Truncate(tasaPerdidaGanancia * 100) / 100))), null);
+                BeginInvoke(new Action(() => txtTotINFLUX.Text = volumenTotalINFLUX.ToString()), null);
 
-                if (tiempoAlarmaAnteriorINFLUX4 == tiempoAlarmaINFLUX4)
-                {
-                    tiempoAlarmaINFLUX4 = 0;
-                }
+                BeginInvoke(new Action(() => txtTVAinflux.Text = wits0126.ToString()), null);
 
-
-                diferenciaWits0126 = Wits0126Anterior - wits0126;
-                diferenciaWits0126Anterior = diferenciaWits0126;
-                tiempoAlarmaAnteriorINFLUX1 = tiempoINFLUX;
-                tiempoAlarmaAnteriorINFLUX2 = tiempoAlarmaINFLUX2;
-                tiempoAlarmaAnteriorINFLUX3 = tiempoAlarmaINFLUX3;
-                tiempoAlarmaAnteriorINFLUX4 = tiempoAlarmaINFLUX4;
                 Wits0121Anterior = wits0121;
-                Wits0126Anterior = wits0126;
+                Wits0126AnterioriNFLUX = wits0126;
                 Wits0128Anterior = wits0128;
                 Wits0130Anterior = wits0130;
-            }
 
-            limiteInteriorINFLUX = (tasaPerdidaGanancia + (tasaPerdidaGanancia * 0.05));//Limite interior Sextante influx
-            limiteExteriorINFLUX = (tasaPerdidaGanancia + (tasaPerdidaGanancia * 0.001));//Limite exterior Sextante influx
+                limiteInteriorINFLUX = (Wits0126Anterior + (Wits0126Anterior * 0.05));//Limite interior Sextante influx
+                limiteExteriorINFLUX = (Wits0126Anterior - (Wits0126Anterior * 0.01));//Limite exterior Sextante influx
+
+                Thread.Sleep(1200);
+            }
         }
 
         private void timerGeneral_TickLOSS(object sender)
         {
-
-            tiempoLOSS = tiempoLOSS + 1; // cada vez que el intervalo configurado en el timer desde el form aumenta un minuto cuando pasan 60000 ms
-            if (Wits0126Anterior > wits0126)
+            while (true)
             {
-                double diferenciaWits0126 = Wits0126Anterior - wits0126;
-                tasaPerdidaGanancia = ((diferenciaWits0126 + diferenciaWits0126Anterior) / tiempoLOSS); // formula para determinar la tasa de perdida o ganancia
-                double limitetasaPerdida = (tasaPerdidaGanancia - (tasaPerdidaGanancia * -0.05));
+                tiempoLOSS = tiempoLOSS + 1; // cada vez que el intervalo configurado en el timer desde el form aumenta un minuto cuando pasan 60000 ms
+                if (Wits0126Anterior > wits0126)
+                {
+                    double diferenciaWits0126 = Wits0126Anterior - wits0126;
+                    double volumeLOSS = (diferenciaWits0126 + diferenciaWits0126Anterior);
+                    tasaPerdidaGanancia = (volumeLOSS / tiempoLOSS); // formula para determinar la tasa de perdida o ganancia
+                    double limitetasaPerdida = (tasaPerdidaGanancia - (tasaPerdidaGanancia * -0.05));
 
 
-                if (limitetasaPerdida > tasaPerdidaGanancia)
-                {
-                    tiempoAlarmaLOSS = tiempoAlarmaLOSS + 1;
-                    lblAlerta.Text = "TVA"; //Direccionado a textbox Alarma
-                    lblAlarma.Text = "TVA " + tiempoAlarmaLOSS.ToString() + "minutos"; // Direccionado a textbox Alerta
-                }
-                if (ROPmaxLimpieza > wits0113)
-                {
-                    tiempoAlarmaLOSS2 = tiempoAlarmaLOSS2 + 1;
-                    lblAlerta.Text = "Max. Hole Cleaning ROP"; //Direccionado a textbox Alarma
-                    lblAlarma.Text = "Max. Hole Cleaning ROP" + tiempoAlarmaLOSS2.ToString() + "minutos"; // Direccionado a textbox Alerta
-                }
-                if (tiempoAlarmaAnteriorLOSS1 == tiempoAlarmaLOSS)
-                {
-                    tiempoAlarmaLOSS = 0;
-                }
-                if (tiempoAlarmaAnteriorLOSS2 == tiempoAlarmaLOSS)
-                {
-                    tiempoAlarmaLOSS2 = 0;
+                    if (limitetasaPerdida > tasaPerdidaGanancia)
+                    {
+                        tiempoAlarmaLOSS = tiempoAlarmaLOSS + 1;
+                        BeginInvoke(new Action(() => lblAlerta.Text = "TVA "), null); //Direccionado a textbox Alarma
+                        BeginInvoke(new Action(() => lblAlarma.Text = "TVA " + tiempoAlarmaLOSS.ToString() + "minutos"), null); // Direccionado a textbox Alerta
+                    }
+                    if (ROPmaxLimpieza > wits0113)
+                    {
+                        tiempoAlarmaLOSS2 = tiempoAlarmaLOSS2 + 1;
+                        BeginInvoke(new Action(() => lblAlerta.Text = "Max. Hole Cleaning ROP "), null); //Direccionado a textbox Alarma
+                        BeginInvoke(new Action(() => lblAlarma.Text = "Max. Hole Cleaning ROP " + tiempoAlarmaLOSS2.ToString() + " minutos"), null); // Direccionado a textbox Alerta
+                    }
+                    if (tiempoAlarmaAnteriorLOSS1 == tiempoAlarmaLOSS)
+                    {
+                        tiempoAlarmaLOSS = 0;
+                    }
+                    if (tiempoAlarmaAnteriorLOSS2 == tiempoAlarmaLOSS)
+                    {
+                        tiempoAlarmaLOSS2 = 0;
+                    }
+
+                    diferenciaWits0126 = Wits0126Anterior - wits0126;
+                    diferenciaWits0126Anterior = diferenciaWits0126;
+                    tiempoAlarmaAnteriorLOSS1 = tiempoAlarmaLOSS;
+                    tiempoAlarmaAnteriorLOSS2 = tiempoAlarmaLOSS2;
+                    limiteInteriorLOSS = (Wits0126Anterior - (Wits0126Anterior * 0.05));//Limite interior Sextante LOSS
+                    limiteExteriorLOSS = (Wits0126Anterior + (Wits0126Anterior * 0.01));//Limite exterior Sextante LOSS
+                    
+
+                    volumenTotalLOSS += volumeLOSS;
+
+                    BeginInvoke(new Action(() => txtVolumeLOSS.Text = string.Format("{0:n2}", (Math.Truncate(volumeLOSS * 100) / 100))), null);
                 }
 
-                diferenciaWits0126 = Wits0126Anterior - wits0126;
-                diferenciaWits0126Anterior = diferenciaWits0126;
-                tiempoAlarmaAnteriorLOSS1 = tiempoAlarmaLOSS;
-                tiempoAlarmaAnteriorLOSS2 = tiempoAlarmaLOSS2;
-                limiteInteriorLOSS = (tasaPerdidaGanancia - (tasaPerdidaGanancia * -0.05));//Limite interior Sextante LOSS
-                limiteExteriorLOSS = (tasaPerdidaGanancia - (tasaPerdidaGanancia * -0.001));//Limite exterior Sextante LOSS
                 Wits0126Anterior = wits0126;
-            }
 
+                BeginInvoke(new Action(() => txtRateLOSS.Text = string.Format("{0:n2}", (Math.Truncate(tasaPerdidaGanancia * 100) / 100))), null);
+                BeginInvoke(new Action(() => txtTotalLOSS.Text = volumenTotalLOSS.ToString()), null);
+
+                Thread.Sleep(1200);
+            }
 
         }
 
         private void TimerGeneral_TickPIPE_MOVE(object sender)
-        {   //Comparadores para identificar que el viaje se encuentra bajando
+        {  //Comparadores para identificar que el viaje se encuentra bajando
+
             if (wits0110 > wits0108)
             {
                 if (wits0113 == 0)
@@ -1047,10 +1171,35 @@ namespace Smart_Rig_V1._1
                     if (wits0108 > wits0108Anterior)
                     {
                         viaje = 1;
+                        if (wits0113 == 0 && wits0110 > wits0108 && EstadoPIPE == 0)
+                        {
+                            Wits0108Inicial = wits0108;
+                            tiempoPIPE = tiempoPIPE + 1;
+                            wits4781 = ((wits0108 - Wits0108Inicial) / (tiempoPIPE - tiempoAnteriorPIPE));
+                            EstadoPIPE = 1;
+                        }
+                        if (wits0113 == 0 && wits0110 > wits0108 && EstadoPIPE == 1)
+                        {
+                            tiempoPIPE = tiempoPIPE + 1;
+                            wits4781 = ((wits0108 - Wits0108Inicial) / (tiempoPIPE - tiempoAnteriorPIPE));
+                        }
                     }
-                    else
+                    if (wits0108Anterior > wits0108)
                     {
                         viaje = 2;
+                        if (wits0113 == 0 && wits0110 > wits0108 && EstadoPIPE2 == 0)
+                        {
+                            Wits0108Inicial = wits0108;
+                            tiempoPIPE = tiempoPIPE + 1;
+                            wits4781 = ((wits0108 - Wits0108Inicial) / (tiempoPIPE - tiempoAnteriorPIPE));
+                            EstadoPIPE = 1;
+                        }
+                        if (wits0113 == 0 && wits0110 > wits0108 && EstadoPIPE2 == 1)
+                        {
+                            Wits0108Inicial = wits0108;
+                            tiempoPIPE = tiempoPIPE + 1;
+                            wits4781 = ((wits0108 - Wits0108Inicial) / (tiempoPIPE - tiempoAnteriorPIPE));
+                        }
                     }
                 }
             }
@@ -1059,26 +1208,94 @@ namespace Smart_Rig_V1._1
             {
                 if (wits4781 > VelocidadLimiteSubiendo)
                 {
-                    //textBox1.Text = "Supera limite del viaje subiendo";
+                    tiempoAlarmaPipe1 = tiempoAlarmaPipe1 + 1;
+                    lblAlerta.Text = "Drag "; //Direccionado a textbox Alarma
+                    lblAlarma.Text = "Drag " + tiempoAlarmaPipe1.ToString() + "minutos"; // Direccionado a textbox Alerta
                 }
-                if (wits0117 > 1)
+                if (wits0117 > 0)
                 {
-                    //textBox1.Text = "Punto apretado";
+                    tiempoAlarmaPipe2 = tiempoAlarmaPipe2 + 1;
+                    lblAlerta.Text = "Overpull "; //Direccionado a textbox Alarma
+                    lblAlarma.Text = "Overpull " + tiempoAlarmaPipe2.ToString() + "minutos"; // Direccionado a textbox Alerta
                 }
             }
             if (viaje == 2)
             {
                 if (wits4781 > VelocidadLimiteBajando)
                 {
-                    //textBox1.Text = "Supera limite del viaje bajando";
+                    tiempoAlarmaPipe3 = tiempoAlarmaPipe3 + 1;
+                    lblAlerta.Text = "Drag "; //Direccionado a textbox Alarma
+                    lblAlarma.Text = "Drag " + tiempoAlarmaPipe3.ToString() + "minutos"; // Direccionado a textbox Alerta
+                }
+                if (wits0117 < 0)
+                {
+                    tiempoAlarmaPipe4 = tiempoAlarmaPipe4 + 1;
+                    lblAlarma.Text = "Overpull "; //Direccionado a textbox Alarma
+                    lblAlerta.Text = "Overpull " + tiempoAlarmaPipe4.ToString() + "minutos"; // Direccionado a textbox Alerta
                 }
             }
             wits0108Anterior = wits0108;
+            tiempoAnteriorPIPE = tiempoPIPE;
+
 
         }
 
-       
+        private void TimerGeneral_TickTight(object sender)
+        {
+            while (true)
+            {
+                double Wits0121Limite = Wits0121AnteriorTight + 50;
+                double Wits0119Limite = Wits0119AnteriorTight + 1000;
 
+                if (wits0130 == Wits0130Anterior)
+                {
+                    if (wits0121 >= Wits0121Limite)
+                    {
+                        if (wits0121RestauracionTight == 0)
+                        {
+                            wits0121RestauracionTight = wits0121;
+                            BeginInvoke(new Action(() => txtSPP.Text = wits0121.ToString()), null);
+                        }
+                        
+                        tiempoAlarmaTIGHTT1 = tiempoAlarmaTIGHTT1 + 1;
+                        BeginInvoke(new Action(() => lblAlerta.Text = " TVA"), null); //Direccionado a textbox Alarma
+                        BeginInvoke(new Action(() => lblAlarma.Text = "TVA " + tiempoAlarmaTIGHTT1.ToString() + " minutos"), null); // Direccionado a textbox Alerta
+                        
+                    }
+                }
+
+                else if (wits0119 > Wits0119Limite)
+                {
+                    if (wits0119RestauracionTight == 0)
+                    {
+                        wits0119RestauracionTight = wits0121;
+                    }
+                    tiempoAlarmaTIGHTT2 = tiempoAlarmaTIGHTT2 + 1;
+                    BeginInvoke(new Action(() => lblAlerta.Text = "SPP "), null); //Direccionado a textbox Alarma
+                    BeginInvoke(new Action(() => lblAlarma.Text = "SPP " + tiempoAlarmaTIGHTT2.ToString() + " minutos"), null); // Direccionado a textbox Alerta
+                }
+
+                else
+                {
+                    tiempoAlarmaTIGHTT1 = 0;
+                    tiempoAlarmaTIGHTT2 = 0;
+                }
+
+                //if (wits0121RestauracionTight <= wits0121)
+                //{
+                //    BeginInvoke(new Action(() => txtSPP.Text = "0"), null);
+                //}
+
+                tiempoEjecucion = tiempoEjecucion + 1;
+
+                Wits0121AnteriorTight = wits0121;
+                Wits0119AnteriorTight = wits0119;
+                Wits0130AnteriorTight = wits0130;
+
+                Thread.Sleep(1150);
+            }
+            
+        }
 
         private void Timer_Tick(object sender)
         {
@@ -1091,7 +1308,7 @@ namespace Smart_Rig_V1._1
                 //Crear Lapiz Gain & loss
                 pGnL = new Pen(Color.Aqua, 6f);
                 //Lapiz HMSE
-                //pHMSE = new Pen(Color.LawnGreen, 6f);
+                pHMSE = new Pen(Color.LawnGreen, 6f);
                 //Lapiz 3
                 pINFLUX = new Pen(Color.Yellow, 6f);
                 //Lapiz 4
@@ -1187,7 +1404,8 @@ namespace Smart_Rig_V1._1
                     }
                 }
                 //LOSS
-                g.DrawEllipse(pGnL, 198 , 5 + valorPuntoLOSS, 6, 6);
+                if(valorPuntoLOSS != double.NaN || !double.IsNaN(valorPuntoLOSS) )
+                    g.DrawEllipse(pGnL, 198 , 5 + valorPuntoLOSS, 6, 6);
 
                 //INFLUX
                 g.DrawEllipse(pINFLUX, 30 + valorPuntosINFLUX[0], 99 + valorPuntosINFLUX[1], 6, 6);

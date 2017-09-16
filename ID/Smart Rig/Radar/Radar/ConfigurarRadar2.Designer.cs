@@ -133,6 +133,7 @@
             this.btnSiguienteDHT.TabIndex = 125;
             this.btnSiguienteDHT.Text = "Siguiente";
             this.btnSiguienteDHT.UseSelectable = true;
+            this.btnSiguienteDHT.Click += new System.EventHandler(this.btnSiguienteDHT_Click);
             // 
             // btnAtrasDHT
             // 

@@ -97,18 +97,19 @@
             this.metroTextBox53 = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel23 = new MetroFramework.Controls.MetroLabel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.lblAlarma = new System.Windows.Forms.Label();
             this.metroLabel25 = new MetroFramework.Controls.MetroLabel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.txtDRAGtight = new System.Windows.Forms.TextBox();
             this.metroLabel26 = new MetroFramework.Controls.MetroLabel();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.txtTorque = new System.Windows.Forms.TextBox();
             this.metroLabel28 = new MetroFramework.Controls.MetroLabel();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.txtSPP = new System.Windows.Forms.TextBox();
+            this.txtQTight = new System.Windows.Forms.TextBox();
             this.metroLabel29 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel30 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel31 = new MetroFramework.Controls.MetroLabel();
@@ -117,16 +118,17 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.txtPVTloss = new System.Windows.Forms.TextBox();
-            this.txtLOSS = new System.Windows.Forms.TextBox();
+            this.txtRateLOSS = new System.Windows.Forms.TextBox();
+            this.txtVolumeLOSS = new System.Windows.Forms.TextBox();
+            this.txtTVAloss = new System.Windows.Forms.TextBox();
+            this.txtTotalLOSS = new System.Windows.Forms.TextBox();
             this.metroLabel37 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel38 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel39 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel40 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel41 = new MetroFramework.Controls.MetroLabel();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.lblAlerta = new System.Windows.Forms.Label();
             this.metroLabel42 = new MetroFramework.Controls.MetroLabel();
             this.SpComunicacion = new System.IO.Ports.SerialPort(this.components);
             this.Timer = new System.Windows.Forms.Timer(this.components);
@@ -137,13 +139,13 @@
             this.txtResultadosEcuaciones = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtRateINFLUX = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtVolumeINFLUX = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.txtPVTinflux = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtTVAinflux = new System.Windows.Forms.TextBox();
+            this.txtTotINFLUX = new System.Windows.Forms.TextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
@@ -153,8 +155,6 @@
             this.metroLabel32 = new MetroFramework.Controls.MetroLabel();
             this.pbAnA = new System.Windows.Forms.PictureBox();
             this.pbRadar = new System.Windows.Forms.PictureBox();
-            this.lblAlerta = new System.Windows.Forms.Label();
-            this.lblAlarma = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -1012,6 +1012,7 @@
             this.txtNPT.Name = "txtNPT";
             this.txtNPT.Size = new System.Drawing.Size(105, 20);
             this.txtNPT.TabIndex = 7;
+            this.txtNPT.Text = "0";
             // 
             // metroLabel18
             // 
@@ -1181,6 +1182,15 @@
             this.panel8.Size = new System.Drawing.Size(553, 65);
             this.panel8.TabIndex = 11;
             // 
+            // lblAlarma
+            // 
+            this.lblAlarma.AutoSize = true;
+            this.lblAlarma.Location = new System.Drawing.Point(82, 12);
+            this.lblAlarma.Name = "lblAlarma";
+            this.lblAlarma.Size = new System.Drawing.Size(127, 13);
+            this.lblAlarma.TabIndex = 2;
+            this.lblAlarma.Text = "----------------------------------------";
+            // 
             // metroLabel25
             // 
             this.metroLabel25.AutoSize = true;
@@ -1196,12 +1206,12 @@
             this.panel9.Controls.Add(this.label23);
             this.panel9.Controls.Add(this.label22);
             this.panel9.Controls.Add(this.label21);
-            this.panel9.Controls.Add(this.textBox16);
+            this.panel9.Controls.Add(this.txtDRAGtight);
             this.panel9.Controls.Add(this.metroLabel26);
-            this.panel9.Controls.Add(this.textBox17);
+            this.panel9.Controls.Add(this.txtTorque);
             this.panel9.Controls.Add(this.metroLabel28);
-            this.panel9.Controls.Add(this.textBox18);
-            this.panel9.Controls.Add(this.textBox19);
+            this.panel9.Controls.Add(this.txtSPP);
+            this.panel9.Controls.Add(this.txtQTight);
             this.panel9.Controls.Add(this.metroLabel29);
             this.panel9.Controls.Add(this.metroLabel30);
             this.panel9.Controls.Add(this.metroLabel31);
@@ -1246,12 +1256,12 @@
             this.label21.TabIndex = 20;
             this.label21.Text = "psi";
             // 
-            // textBox16
+            // txtDRAGtight
             // 
-            this.textBox16.Location = new System.Drawing.Point(116, 86);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(105, 20);
-            this.textBox16.TabIndex = 18;
+            this.txtDRAGtight.Location = new System.Drawing.Point(116, 86);
+            this.txtDRAGtight.Name = "txtDRAGtight";
+            this.txtDRAGtight.Size = new System.Drawing.Size(105, 20);
+            this.txtDRAGtight.TabIndex = 18;
             // 
             // metroLabel26
             // 
@@ -1264,12 +1274,12 @@
             this.metroLabel26.TabIndex = 4;
             this.metroLabel26.Text = "Q";
             // 
-            // textBox17
+            // txtTorque
             // 
-            this.textBox17.Location = new System.Drawing.Point(116, 62);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(105, 20);
-            this.textBox17.TabIndex = 17;
+            this.txtTorque.Location = new System.Drawing.Point(116, 62);
+            this.txtTorque.Name = "txtTorque";
+            this.txtTorque.Size = new System.Drawing.Size(105, 20);
+            this.txtTorque.TabIndex = 17;
             // 
             // metroLabel28
             // 
@@ -1282,19 +1292,19 @@
             this.metroLabel28.TabIndex = 3;
             this.metroLabel28.Text = "DRAG";
             // 
-            // textBox18
+            // txtSPP
             // 
-            this.textBox18.Location = new System.Drawing.Point(116, 36);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(105, 20);
-            this.textBox18.TabIndex = 16;
+            this.txtSPP.Location = new System.Drawing.Point(116, 36);
+            this.txtSPP.Name = "txtSPP";
+            this.txtSPP.Size = new System.Drawing.Size(105, 20);
+            this.txtSPP.TabIndex = 16;
             // 
-            // textBox19
+            // txtQTight
             // 
-            this.textBox19.Location = new System.Drawing.Point(116, 112);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(105, 20);
-            this.textBox19.TabIndex = 15;
+            this.txtQTight.Location = new System.Drawing.Point(116, 112);
+            this.txtQTight.Name = "txtQTight";
+            this.txtQTight.Size = new System.Drawing.Size(105, 20);
+            this.txtQTight.TabIndex = 15;
             // 
             // metroLabel29
             // 
@@ -1333,10 +1343,10 @@
             this.panel11.Controls.Add(this.label15);
             this.panel11.Controls.Add(this.label14);
             this.panel11.Controls.Add(this.label13);
-            this.panel11.Controls.Add(this.textBox7);
-            this.panel11.Controls.Add(this.textBox6);
-            this.panel11.Controls.Add(this.txtPVTloss);
-            this.panel11.Controls.Add(this.txtLOSS);
+            this.panel11.Controls.Add(this.txtRateLOSS);
+            this.panel11.Controls.Add(this.txtVolumeLOSS);
+            this.panel11.Controls.Add(this.txtTVAloss);
+            this.panel11.Controls.Add(this.txtTotalLOSS);
             this.panel11.Controls.Add(this.metroLabel37);
             this.panel11.Controls.Add(this.metroLabel38);
             this.panel11.Controls.Add(this.metroLabel39);
@@ -1383,33 +1393,33 @@
             this.label13.TabIndex = 13;
             this.label13.Text = "bbl";
             // 
-            // textBox7
+            // txtRateLOSS
             // 
-            this.textBox7.Location = new System.Drawing.Point(116, 85);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(105, 20);
-            this.textBox7.TabIndex = 9;
+            this.txtRateLOSS.Location = new System.Drawing.Point(116, 85);
+            this.txtRateLOSS.Name = "txtRateLOSS";
+            this.txtRateLOSS.Size = new System.Drawing.Size(105, 20);
+            this.txtRateLOSS.TabIndex = 9;
             // 
-            // textBox6
+            // txtVolumeLOSS
             // 
-            this.textBox6.Location = new System.Drawing.Point(116, 58);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(105, 20);
-            this.textBox6.TabIndex = 8;
+            this.txtVolumeLOSS.Location = new System.Drawing.Point(116, 58);
+            this.txtVolumeLOSS.Name = "txtVolumeLOSS";
+            this.txtVolumeLOSS.Size = new System.Drawing.Size(105, 20);
+            this.txtVolumeLOSS.TabIndex = 8;
             // 
-            // txtPVTloss
+            // txtTVAloss
             // 
-            this.txtPVTloss.Location = new System.Drawing.Point(116, 32);
-            this.txtPVTloss.Name = "txtPVTloss";
-            this.txtPVTloss.Size = new System.Drawing.Size(105, 20);
-            this.txtPVTloss.TabIndex = 7;
+            this.txtTVAloss.Location = new System.Drawing.Point(116, 32);
+            this.txtTVAloss.Name = "txtTVAloss";
+            this.txtTVAloss.Size = new System.Drawing.Size(105, 20);
+            this.txtTVAloss.TabIndex = 7;
             // 
-            // txtLOSS
+            // txtTotalLOSS
             // 
-            this.txtLOSS.Location = new System.Drawing.Point(116, 109);
-            this.txtLOSS.Name = "txtLOSS";
-            this.txtLOSS.Size = new System.Drawing.Size(105, 20);
-            this.txtLOSS.TabIndex = 6;
+            this.txtTotalLOSS.Location = new System.Drawing.Point(116, 109);
+            this.txtTotalLOSS.Name = "txtTotalLOSS";
+            this.txtTotalLOSS.Size = new System.Drawing.Size(105, 20);
+            this.txtTotalLOSS.TabIndex = 6;
             // 
             // metroLabel37
             // 
@@ -1453,7 +1463,7 @@
             this.metroLabel40.Name = "metroLabel40";
             this.metroLabel40.Size = new System.Drawing.Size(28, 15);
             this.metroLabel40.TabIndex = 1;
-            this.metroLabel40.Text = "PVT";
+            this.metroLabel40.Text = "TVA";
             // 
             // metroLabel41
             // 
@@ -1472,6 +1482,15 @@
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(644, 65);
             this.panel12.TabIndex = 12;
+            // 
+            // lblAlerta
+            // 
+            this.lblAlerta.AutoSize = true;
+            this.lblAlerta.Location = new System.Drawing.Point(76, 12);
+            this.lblAlerta.Name = "lblAlerta";
+            this.lblAlerta.Size = new System.Drawing.Size(136, 13);
+            this.lblAlerta.TabIndex = 1;
+            this.lblAlerta.Text = "-------------------------------------------";
             // 
             // metroLabel42
             // 
@@ -1504,13 +1523,13 @@
             // panel7
             // 
             this.panel7.Controls.Add(this.label17);
-            this.panel7.Controls.Add(this.textBox8);
+            this.panel7.Controls.Add(this.txtRateINFLUX);
             this.panel7.Controls.Add(this.label18);
             this.panel7.Controls.Add(this.label19);
-            this.panel7.Controls.Add(this.textBox9);
+            this.panel7.Controls.Add(this.txtVolumeINFLUX);
             this.panel7.Controls.Add(this.label20);
-            this.panel7.Controls.Add(this.txtPVTinflux);
-            this.panel7.Controls.Add(this.textBox11);
+            this.panel7.Controls.Add(this.txtTVAinflux);
+            this.panel7.Controls.Add(this.txtTotINFLUX);
             this.panel7.Controls.Add(this.metroLabel3);
             this.panel7.Controls.Add(this.metroLabel4);
             this.panel7.Controls.Add(this.metroLabel5);
@@ -1530,12 +1549,12 @@
             this.label17.TabIndex = 20;
             this.label17.Text = "bbl";
             // 
-            // textBox8
+            // txtRateINFLUX
             // 
-            this.textBox8.Location = new System.Drawing.Point(116, 85);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(105, 20);
-            this.textBox8.TabIndex = 9;
+            this.txtRateINFLUX.Location = new System.Drawing.Point(116, 85);
+            this.txtRateINFLUX.Name = "txtRateINFLUX";
+            this.txtRateINFLUX.Size = new System.Drawing.Size(105, 20);
+            this.txtRateINFLUX.TabIndex = 9;
             // 
             // label18
             // 
@@ -1555,12 +1574,12 @@
             this.label19.TabIndex = 18;
             this.label19.Text = "bbl";
             // 
-            // textBox9
+            // txtVolumeINFLUX
             // 
-            this.textBox9.Location = new System.Drawing.Point(116, 58);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(105, 20);
-            this.textBox9.TabIndex = 8;
+            this.txtVolumeINFLUX.Location = new System.Drawing.Point(116, 58);
+            this.txtVolumeINFLUX.Name = "txtVolumeINFLUX";
+            this.txtVolumeINFLUX.Size = new System.Drawing.Size(105, 20);
+            this.txtVolumeINFLUX.TabIndex = 8;
             // 
             // label20
             // 
@@ -1571,19 +1590,19 @@
             this.label20.TabIndex = 17;
             this.label20.Text = "bbl";
             // 
-            // txtPVTinflux
+            // txtTVAinflux
             // 
-            this.txtPVTinflux.Location = new System.Drawing.Point(116, 32);
-            this.txtPVTinflux.Name = "txtPVTinflux";
-            this.txtPVTinflux.Size = new System.Drawing.Size(105, 20);
-            this.txtPVTinflux.TabIndex = 7;
+            this.txtTVAinflux.Location = new System.Drawing.Point(116, 32);
+            this.txtTVAinflux.Name = "txtTVAinflux";
+            this.txtTVAinflux.Size = new System.Drawing.Size(105, 20);
+            this.txtTVAinflux.TabIndex = 7;
             // 
-            // textBox11
+            // txtTotINFLUX
             // 
-            this.textBox11.Location = new System.Drawing.Point(116, 109);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(105, 20);
-            this.textBox11.TabIndex = 6;
+            this.txtTotINFLUX.Location = new System.Drawing.Point(116, 109);
+            this.txtTotINFLUX.Name = "txtTotINFLUX";
+            this.txtTotINFLUX.Size = new System.Drawing.Size(105, 20);
+            this.txtTotINFLUX.TabIndex = 6;
             // 
             // metroLabel3
             // 
@@ -1627,7 +1646,7 @@
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(28, 15);
             this.metroLabel7.TabIndex = 1;
-            this.metroLabel7.Text = "PVT";
+            this.metroLabel7.Text = "TVA";
             // 
             // metroLabel24
             // 
@@ -1673,24 +1692,6 @@
             this.pbRadar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbRadar.TabIndex = 0;
             this.pbRadar.TabStop = false;
-            // 
-            // lblAlerta
-            // 
-            this.lblAlerta.AutoSize = true;
-            this.lblAlerta.Location = new System.Drawing.Point(76, 12);
-            this.lblAlerta.Name = "lblAlerta";
-            this.lblAlerta.Size = new System.Drawing.Size(10, 13);
-            this.lblAlerta.TabIndex = 1;
-            this.lblAlerta.Text = "-";
-            // 
-            // lblAlarma
-            // 
-            this.lblAlarma.AutoSize = true;
-            this.lblAlarma.Location = new System.Drawing.Point(82, 12);
-            this.lblAlarma.Name = "lblAlarma";
-            this.lblAlarma.Size = new System.Drawing.Size(10, 13);
-            this.lblAlarma.TabIndex = 2;
-            this.lblAlarma.Text = "-";
             // 
             // Radar
             // 
@@ -1815,7 +1816,7 @@
         private System.Windows.Forms.Timer timerLOSS;
         private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.TextBox txtNPT;
-        private System.Windows.Forms.TextBox txtLOSS;
+        private System.Windows.Forms.TextBox txtTotalLOSS;
         private System.Windows.Forms.TextBox txtROP;
         private System.Windows.Forms.TextBox txtResultadosEcuaciones;
         private System.Windows.Forms.TextBox txtMSE;
@@ -1826,18 +1827,18 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox txtDrilling;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox txtPVTloss;
+        private System.Windows.Forms.TextBox txtDRAGtight;
+        private System.Windows.Forms.TextBox txtTorque;
+        private System.Windows.Forms.TextBox txtSPP;
+        private System.Windows.Forms.TextBox txtQTight;
+        private System.Windows.Forms.TextBox txtRateLOSS;
+        private System.Windows.Forms.TextBox txtVolumeLOSS;
+        private System.Windows.Forms.TextBox txtTVAloss;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox txtPVTinflux;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txtRateINFLUX;
+        private System.Windows.Forms.TextBox txtVolumeINFLUX;
+        private System.Windows.Forms.TextBox txtTVAinflux;
+        private System.Windows.Forms.TextBox txtTotINFLUX;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel5;

@@ -68,6 +68,8 @@ namespace pyosoft
             //    {
             //        Thread.Sleep(3000);
             //    }
+            try
+            {
                 bool realmenteHayInternet = NetworkInterface.GetIsNetworkAvailable(); //AccesoInternet();
                 if (realmenteHayInternet)
                 {
@@ -99,150 +101,156 @@ namespace pyosoft
                     MysqlTr.Commit();
 
                     conn.Close();
-                //}
-
-            }
-
-            return retorno;
-        }
-
-        public Tuple<List<protocoloWits>, int> FormateaWits(string cadenaConexion, string cadenaConexionMysql, string wits)
-        {
-
-            string[] stringSeparators = new string[] { "\r\n" };
-            int resultado = 0;
-
-            List<protocoloWits> listaWits = new List<protocoloWits>();
-            if (wits.Length > 2)
-            {
-                string[] elementosWits = wits.Split(stringSeparators, StringSplitOptions.None);
-
-                foreach (var dato in elementosWits)
-                {
-                    if (dato != "" && dato.Length > 4 && dato.Contains("?") == false && dato.Contains("&") == false && dato.Contains("EDR") == false)
-                    {
-                        protocoloWits elemento = new protocoloWits();
-                        elemento.WITpaqueteNumero = dato.Substring(0, 2);
-                        elemento.WITitem = dato.Substring(0, 4);
-                        elemento.WITvalor = dato.Substring(4);
-                        elemento.WITfecha = DateTime.Now;
-
-                        listaWits.Add(elemento);
-                    }
-                }
-
-
-                procesoSecundarioSqlite = new Thread(() =>  AD_protocoloWits.AgregarSQLite(listaWits, cadenaConexion));
-                procesoSecundarioSqlite.Start();
-                bool hayInternet = NetworkInterface.GetIsNetworkAvailable(); // AccesoInternet();
-                bool rllyExists = false;
-                if (!hayInternet)
-                {
-                    //conexion = false;
-                    resultado = 0;
-                }
-                if (hayInternet)
-                {
-                    if (resultado == 0)//(!conexion)
-                    {
-                        Thread.Sleep(100);
-                        rllyExists = NetworkInterface.GetIsNetworkAvailable();
-                    }
-                    if (rllyExists)
-                    {
-                        procesoSecundarioMysql = new Thread(() => AD_protocoloWits.AgregarMysql(listaWits, cadenaConexionMysql, error));
-                        procesoSecundarioMysql.Start();
-                    }
-                }
-                //resultado = (elementosWits.Length * 100) / 38;
-            }
-
-            return Tuple.Create(listaWits, resultado);
-        }
-
-        private static bool AccesoInternet()
-        {
-            WebRequest Req = WebRequest.Create("http://www.google.com");
-            System.Net.HttpWebResponse res = default(System.Net.HttpWebResponse);
-
-            try
-            {
-                Req = (System.Net.HttpWebRequest)System.Net.WebRequest.Create("http://www.google.com");
-
-
-                res = (System.Net.HttpWebResponse)Req.GetResponse();
-
-                Req.Abort();
-
-                if (res.StatusCode == System.Net.HttpStatusCode.OK)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch
-            {
-                return false;
-            }
-
-        }
-
-        public int guardarConfiguracionWits(string nombreArchivo, List<string> valoresAguardar)
-        {
-            string path = @"c:\\pyosoft";
-            string respuesta = string.Empty;
-
-            crearFolder(path);
-
-            if (Directory.Exists(path))
-            {
-                path += nombreArchivo;// "\\WitsConfiguracion.txt";
-                using (StreamWriter sw = new StreamWriter(path))
-                {
-                    sw.WriteLine("Wits1Configuracion");
-                    foreach (string item in valoresAguardar)
-                    {
-                        sw.WriteLine(item);
-                    }
-
-                    sw.WriteLine("txtVariableN_0,92");
-                    //variable inamovible, antes existia ahora es fija y ahora agregarla :v
-                    sw.WriteLine("txtTorqueBroca_0,20");
-
-
-
-                }
-            }
-
-            return 1;
-        }
-
-        public void crearFolder(string ruta)
-        {
-            // Specify the directory you want to manipulate.
-
-
-            try
-            {
-                // Determine whether the directory exists.
-                if (Directory.Exists(ruta))
-                {
-                    Console.WriteLine("That path exists already.");
-                }
-                else
-                {
-                    // Try to create the directory.
-                    DirectoryInfo di = Directory.CreateDirectory(ruta);
                 }
             }
             catch (Exception ex)
             {
-                throw new ArgumentException(ex.Message);
+                return 0;
             }
+
+            return retorno;
+
+        }
+        
+
+    public Tuple<List<protocoloWits>, int> FormateaWits(string cadenaConexion, string cadenaConexionMysql, string wits)
+    {
+
+        string[] stringSeparators = new string[] { "\r\n" };
+        int resultado = 0;
+
+        List<protocoloWits> listaWits = new List<protocoloWits>();
+        if (wits.Length > 2)
+        {
+            string[] elementosWits = wits.Split(stringSeparators, StringSplitOptions.None);
+
+            foreach (var dato in elementosWits)
+            {
+                if (dato != "" && dato.Length > 4 && dato.Contains("?") == false && dato.Contains("&") == false && dato.Contains("EDR") == false)
+                {
+                    protocoloWits elemento = new protocoloWits();
+                    elemento.WITpaqueteNumero = dato.Substring(0, 2);
+                    elemento.WITitem = dato.Substring(0, 4);
+                    elemento.WITvalor = dato.Substring(4);
+                    elemento.WITfecha = DateTime.Now;
+
+                    listaWits.Add(elemento);
+                }
+            }
+
+
+            procesoSecundarioSqlite = new Thread(() => AD_protocoloWits.AgregarSQLite(listaWits, cadenaConexion));
+            procesoSecundarioSqlite.Start();
+            bool hayInternet = NetworkInterface.GetIsNetworkAvailable(); // AccesoInternet();
+            bool rllyExists = false;
+            if (!hayInternet)
+            {
+                //conexion = false;
+                resultado = 0;
+            }
+            if (hayInternet)
+            {
+                if (resultado == 0)//(!conexion)
+                {
+                    Thread.Sleep(100);
+                    rllyExists = NetworkInterface.GetIsNetworkAvailable();
+                }
+                if (rllyExists)
+                {
+                    procesoSecundarioMysql = new Thread(() => AD_protocoloWits.AgregarMysql(listaWits, cadenaConexionMysql, error));
+                    procesoSecundarioMysql.Start();
+                    resultado = 1;
+                }
+            }
+            //resultado = (elementosWits.Length * 100) / 38;
+        }
+
+        return Tuple.Create(listaWits, resultado);
+    }
+
+    private static bool AccesoInternet()
+    {
+        WebRequest Req = WebRequest.Create("http://www.google.com");
+        System.Net.HttpWebResponse res = default(System.Net.HttpWebResponse);
+
+        try
+        {
+            Req = (System.Net.HttpWebRequest)System.Net.WebRequest.Create("http://www.google.com");
+
+
+            res = (System.Net.HttpWebResponse)Req.GetResponse();
+
+            Req.Abort();
+
+            if (res.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        catch
+        {
+            return false;
         }
 
     }
+
+    public int guardarConfiguracionWits(string nombreArchivo, List<string> valoresAguardar)
+    {
+        string path = @"c:\\pyosoft";
+        string respuesta = string.Empty;
+
+        crearFolder(path);
+
+        if (Directory.Exists(path))
+        {
+            path += nombreArchivo;// "\\WitsConfiguracion.txt";
+            using (StreamWriter sw = new StreamWriter(path))
+            {
+                sw.WriteLine("Wits1Configuracion");
+                foreach (string item in valoresAguardar)
+                {
+                    sw.WriteLine(item);
+                }
+
+                sw.WriteLine("txtVariableN_0,00052");//0.92
+                //variable inamovible, antes existia ahora es fija y ahora agregarla :v
+                sw.WriteLine("txtTorqueBroca_0,20");
+
+
+
+            }
+        }
+
+        return 1;
+    }
+
+    public void crearFolder(string ruta)
+    {
+        // Specify the directory you want to manipulate.
+
+
+        try
+        {
+            // Determine whether the directory exists.
+            if (Directory.Exists(ruta))
+            {
+                Console.WriteLine("That path exists already.");
+            }
+            else
+            {
+                // Try to create the directory.
+                DirectoryInfo di = Directory.CreateDirectory(ruta);
+            }
+        }
+        catch (Exception ex)
+        {
+            throw new ArgumentException(ex.Message);
+        }
+    }
+
+}
 }

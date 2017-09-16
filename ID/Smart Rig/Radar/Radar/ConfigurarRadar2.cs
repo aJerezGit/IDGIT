@@ -34,22 +34,16 @@ namespace Radar
             this.Hide();
         }
 
-        private void btnSiguienteAFE_Click(object sender, EventArgs e)
+        private void btnSiguienteDHT_Click(object sender, EventArgs e)
         {
             foreach (Control item in pnlDHT.Controls)
             {
-                if (item is Panel)
+                if (item is MetroTextBox)
                 {
-                    foreach (Control itemSubPanel in item.Controls)
+                    if (((MetroTextBox)item).Text == "")
                     {
-                        if (itemSubPanel is MetroTextBox)
-                        {
-                            if (((MetroTextBox)itemSubPanel).Text == "")
-                            {
-                                MessageBox.Show("Se debe configurar todas las variables del panel AFE");
-                                return;
-                            }
-                        }
+                        MessageBox.Show("Debe ingresar todos los valores del cuadrante.");
+                        return;
                     }
                 }
             }
@@ -58,23 +52,16 @@ namespace Radar
 
             foreach (Control item in pnlDHT.Controls)
             {
-                if (item is Panel)
+                if (item is MetroTextBox)
                 {
-                    foreach (Control itemSubPanel in item.Controls)
+                    if (((MetroTextBox)item).Text != "")
                     {
-                        if (itemSubPanel is MetroTextBox)
-                        {
-                            if (((MetroTextBox)itemSubPanel).Text != "")
-                            {
-                                valoresAguardar.Add(itemSubPanel.Name + "_" + itemSubPanel.Text);
-                            }
-                        }
+                        valoresAguardar.Add(item.Name + "_" + item.Text);
                     }
                 }
             }
 
             int guardar = new AD_protocoloWits().guardarConfiguracionWits(nombreConfigurador, valoresAguardar);
-
 
             this.Hide();
         }

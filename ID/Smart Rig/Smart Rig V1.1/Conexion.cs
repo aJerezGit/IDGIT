@@ -34,7 +34,10 @@ namespace Smart_Rig_V1._1
 
         private void frmConexion_Load(object sender, EventArgs e)
         {
-            //recordar quitar estas 2 lineas de codigo
+            //TODO recordar quitar esta trampa
+            frmConfigurarRadar2 radar2 = new frmConfigurarRadar2();
+            //radar2.Show();
+
             if (File.Exists(path))
             {
                 if (File.Exists(configurador1))
@@ -47,7 +50,7 @@ namespace Smart_Rig_V1._1
                             {
                                 if (File.Exists(ConfiguradorRadar1))
                                 {
-                                    frmConfigurarRadar2 radar2 = new frmConfigurarRadar2();
+                                    //frmConfigurarRadar2 radar2 = new frmConfigurarRadar2();
                                     radar2.Show();
                                     this.Hide();
                                 }

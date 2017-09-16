@@ -90,26 +90,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Radar.exe" size="37888">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Radar.exe" size="56832">
       <assemblyIdentity name="Radar" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>nzPe99NiYswNcv31mkCGMTtMVwqtkEFdraHBPDyxD5A=</dsig:DigestValue>
+        <dsig:DigestValue>USu0guwqx4fQsJJ26VqZy5Hl60nxT3+faTAtclAE3RA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Smart Rig V1.1.exe" size="657376">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Smart Rig V1.1.exe" size="664032">
       <assemblyIdentity name="Smart Rig V1.1" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>J8NnCYVYXTRpAh7QfaQ04kXHF5//kuKH+p1UDJBlx4c=</dsig:DigestValue>
+        <dsig:DigestValue>7T5pxUy42kugpeHhRjr9I3AGVop9nbqwcxZOwHN3fXc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -126,14 +126,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WITS_CORE.dll" size="18432">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WITS_CORE.dll" size="17920">
       <assemblyIdentity name="WITS_CORE" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Upn0YGTFUdBYm+ePDYYmxQexYKahoERJxMdKHcV3rvk=</dsig:DigestValue>
+        <dsig:DigestValue>79C9ysXqwY5cpnnvhP43ZwrUY5VxqAnjIOFGYwX+qPI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

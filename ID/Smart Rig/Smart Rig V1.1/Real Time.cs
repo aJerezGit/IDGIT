@@ -85,6 +85,7 @@ namespace Smart_Rig_V1._1
             {
                 bntIniciar.Text = "Iniciar";
                 leer = false;
+                PuertoSerial.Close();
             }
         }
 
@@ -136,7 +137,7 @@ namespace Smart_Rig_V1._1
                                 //lblTotalDatos.Text = resultado.Item2.ToString() + "%";
 
                                 mensajeMostrar = true;
-                                lblInternetStatus.Text = "Conencted";
+                                lblInternetStatus.Text = "Connected";
 
                             }
                             else {
