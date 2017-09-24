@@ -186,17 +186,17 @@ namespace Smart_Rig_V1._1
                 tr = new Thread(Timer_Tick);
                 tr.Start();
                 //Lector = new System.Threading.Timer(Timer_Tick, null, 0, 1000);
-                trNPT = new Thread(timerGeneral_TickNPT);
-                trNPT.Start();
+                //trNPT = new Thread(timerGeneral_TickNPT);
+                //trNPT.Start();
                 //INFLUX
-                trNPT = new Thread(timerGeneral_TickINFLUX);
-                trNPT.Start();
+                //trNPT = new Thread(timerGeneral_TickINFLUX);
+                //trNPT.Start();
                 //LOSS
-                trNPT = new Thread(timerGeneral_TickLOSS);
-                trNPT.Start();
+                //trNPT = new Thread(timerGeneral_TickLOSS);
+                //trNPT.Start();
                 //pipe move
-                trNPT = new Thread(timerGeneral_TickLOSS);
-                trNPT.Start();
+                //trNPT = new Thread(timerGeneral_TickLOSS);
+                //trNPT.Start();
                 //tight
                 trNPT = new Thread(TimerGeneral_TickTight);
                 trNPT.Start();
@@ -1258,21 +1258,21 @@ namespace Smart_Rig_V1._1
                         }
                         
                         tiempoAlarmaTIGHTT1 = tiempoAlarmaTIGHTT1 + 1;
-                        BeginInvoke(new Action(() => lblAlerta.Text = " TVA"), null); //Direccionado a textbox Alarma
-                        BeginInvoke(new Action(() => lblAlarma.Text = "TVA " + tiempoAlarmaTIGHTT1.ToString() + " minutos"), null); // Direccionado a textbox Alerta
+                        BeginInvoke(new Action(() => lblAlerta.Text = " SPP"), null); //Direccionado a textbox Alarma
+                        BeginInvoke(new Action(() => lblAlarma.Text = "SPP " + tiempoAlarmaTIGHTT1.ToString() + " minutos"), null); // Direccionado a textbox Alerta
                         
                     }
                 }
 
-                else if (wits0119 > Wits0119Limite)
+                if (wits0119 > Wits0119Limite)
                 {
                     if (wits0119RestauracionTight == 0)
                     {
                         wits0119RestauracionTight = wits0121;
                     }
                     tiempoAlarmaTIGHTT2 = tiempoAlarmaTIGHTT2 + 1;
-                    BeginInvoke(new Action(() => lblAlerta.Text = "SPP "), null); //Direccionado a textbox Alarma
-                    BeginInvoke(new Action(() => lblAlarma.Text = "SPP " + tiempoAlarmaTIGHTT2.ToString() + " minutos"), null); // Direccionado a textbox Alerta
+                    BeginInvoke(new Action(() => lblAlerta.Text = "TQ "), null); //Direccionado a textbox Alarma
+                    BeginInvoke(new Action(() => lblAlarma.Text = "TQ " + tiempoAlarmaTIGHTT2.ToString() + " minutos"), null); // Direccionado a textbox Alerta
                 }
 
                 else
