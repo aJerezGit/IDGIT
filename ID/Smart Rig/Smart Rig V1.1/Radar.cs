@@ -198,8 +198,8 @@ namespace Smart_Rig_V1._1
                 //trNPT = new Thread(timerGeneral_TickLOSS);
                 //trNPT.Start();
                 //tight
-                trNPT = new Thread(TimerGeneral_TickTight);
-                trNPT.Start();
+                //trNPT = new Thread(TimerGeneral_TickTight);
+                //trNPT.Start();
 
 
             }
@@ -395,9 +395,9 @@ namespace Smart_Rig_V1._1
             {
                 if (!SpComunicacion.IsOpen)
                     SpComunicacion.Open();
-                //string[] separadorItems = { "&&", "!!" };
-                string[] stringSeparators2 = new string[] { "\r\n&&" };
-                string[] stringSeparators3 = new string[] { "!!" };
+                string[] separadorItems = { "&&", "!!" };
+                //string[] stringSeparators2 = new string[] { "\r\n&&" };
+                //string[] stringSeparators3 = new string[] { "!!" };
 
                 List<String> datosAServidor = new List<string>();
                 int contador = 0;
@@ -405,85 +405,88 @@ namespace Smart_Rig_V1._1
                 string datosSerial = "";
                 //mensajeMostrar = true;
                 datosSerial = SpComunicacion.ReadExisting();
-                string[] valor3t = datosSerial.Split(stringSeparators2, StringSplitOptions.None);
-                foreach(string t in valor3t)
-                {                    
-                    if (t.Contains("!!"))
-                    {
-                        string[] valor1 = t.Split(stringSeparators3, StringSplitOptions.None);
-                        if (!valor1[0].Contains("&&"))
-                            datosAServidor.Add(valor1[0]);                        
-                    }
-                }
-                foreach (string l in datosAServidor)
+                string[] valor3t = datosSerial.Split(separadorItems, StringSplitOptions.None);
+                if (valor3t.Length > 1)
                 {
-                    if (l != "" && l.Length > 5)
+                    //foreach (string t in valor3t)
+                    //{
+                    //    if (t.Contains("!!"))
+                    //    {
+                    //        string[] valor1 = t.Split(stringSeparators3, StringSplitOptions.None);
+                    //        if (!valor1[0].Contains("&&"))
+                    //            datosAServidor.Add(valor1[0]);
+                    //    }
+                    //}
+                    foreach (string l in valor3t)
                     {
-                        Tuple<List<protocoloWits>, int> resultado = new AD_protocoloWits().FormateaWits(cadenaConexion, MysqlConexion, l);
-                        //pintarElemento(resultado.Item1);
-
-                        if (resultado.Item1 != null)
+                        if (l != "" && l.Length > 5)
                         {
-                            foreach (protocoloWits item in resultado.Item1)
+                            Tuple<List<protocoloWits>, int> resultado = new AD_protocoloWits().FormateaWits(cadenaConexion, MysqlConexion, l);
+                            //pintarElemento(resultado.Item1);
+
+                            if (resultado.Item1 != null)
                             {
-                                if (item.WITitem == "0130")
+                                foreach (protocoloWits item in resultado.Item1)
                                 {
-                                    wits0130 = double.Parse(item.WITvalor);
-                                }
+                                    if (item.WITitem == "0130")
+                                    {
+                                        wits0130 = double.Parse(item.WITvalor);
+                                    }
 
-                                if (item.WITitem == "0117")
-                                {
-                                    wits0117 = double.Parse(item.WITvalor);
-                                }
+                                    if (item.WITitem == "0117")
+                                    {
+                                        wits0117 = double.Parse(item.WITvalor);
+                                    }
 
-                                if (item.WITitem == "0113")
-                                {
-                                    wits0113 = double.Parse(item.WITvalor);
-                                }
+                                    if (item.WITitem == "0113")
+                                    {
+                                        wits0113 = double.Parse(item.WITvalor);
+                                    }
 
-                                if (item.WITitem == "0119")
-                                {
-                                    wits0119 = double.Parse(item.WITvalor);
-                                }
+                                    if (item.WITitem == "0119")
+                                    {
+                                        wits0119 = double.Parse(item.WITvalor);
+                                    }
 
-                                if (item.WITitem == "0120")
-                                {
-                                    wits0120 = double.Parse(item.WITvalor);
-                                }
+                                    if (item.WITitem == "0120")
+                                    {
+                                        wits0120 = double.Parse(item.WITvalor);
+                                    }
 
-                                if (item.WITitem == "0171")
-                                {
-                                    wits0171 = double.Parse(item.WITvalor);
-                                }
+                                    if (item.WITitem == "0171")
+                                    {
+                                        wits0171 = double.Parse(item.WITvalor);
+                                    }
 
-                                if (item.WITitem == "0126")
-                                {
-                                    wits0126 = double.Parse(item.WITvalor);
-                                }
-                                if (item.WITitem == "0108")
-                                {
-                                    wits0108 = double.Parse(item.WITvalor);
-                                }
-                                if (item.WITitem == "0110")
-                                {
-                                    wits0110 = double.Parse(item.WITvalor);
-                                }
-                                if (item.WITitem == "0112")
-                                {
-                                    wits0112 = double.Parse(item.WITvalor);
-                                }
-                                if (item.WITitem == "0121")
-                                {
-                                    wits0121 = double.Parse(item.WITvalor);
-                                }
+                                    if (item.WITitem == "0126")
+                                    {
+                                        wits0126 = double.Parse(item.WITvalor);
+                                    }
+                                    if (item.WITitem == "0108")
+                                    {
+                                        wits0108 = double.Parse(item.WITvalor);
+                                    }
+                                    if (item.WITitem == "0110")
+                                    {
+                                        wits0110 = double.Parse(item.WITvalor);
+                                    }
+                                    if (item.WITitem == "0112")
+                                    {
+                                        wits0112 = double.Parse(item.WITvalor);
+                                    }
+                                    if (item.WITitem == "0121")
+                                    {
+                                        wits0121 = double.Parse(item.WITvalor);
+                                    }
+                                    BeginInvoke(new Action(() => txtpruebaNuevo.Text = wits0121.ToString()), null);
 
-
+                                }
                             }
+
                         }
 
+                        Application.DoEvents();
                     }
-
-                    Application.DoEvents();
                 }
 
                 if (!String.IsNullOrEmpty(wits0113.ToString()) && !String.IsNullOrEmpty(wits0117.ToString()) && !String.IsNullOrEmpty(wits0119.ToString()) && !String.IsNullOrEmpty(wits0120.ToString()) && !String.IsNullOrEmpty(wits0130.ToString()) && !String.IsNullOrEmpty(wits0171.ToString()))
@@ -510,6 +513,7 @@ namespace Smart_Rig_V1._1
 
                     BeginInvoke(new Action(() => txtTVAloss.Text = wits0126.ToString()), null);
                     BeginInvoke(new Action(() => txtQTight.Text = wits0130.ToString()), null);
+                   
 
                     if (wits0108 == wits0110)
                     {
@@ -524,6 +528,9 @@ namespace Smart_Rig_V1._1
                         BeginInvoke(new Action(() => txtDRAGtight.Text = "0"), null);
                     }
                 }
+
+                BeginInvoke(new Action(() => txtpruebaNuevo.Text = wits0121.ToString()), null);
+
 
                 contador += 1;
                 if (contador == 1)
@@ -1247,7 +1254,10 @@ namespace Smart_Rig_V1._1
                 double Wits0121Limite = Wits0121AnteriorTight + 50;
                 double Wits0119Limite = Wits0119AnteriorTight + 1000;
 
-                if (wits0130 == Wits0130Anterior)
+                BeginInvoke(new Action(() => txtResultadosEcuaciones.Text = Wits0121AnteriorTight.ToString()), null);
+
+
+                if (wits0130 == Wits0130AnteriorTight)
                 {
                     if (wits0121 >= Wits0121Limite)
                     {
@@ -1281,6 +1291,7 @@ namespace Smart_Rig_V1._1
                     tiempoAlarmaTIGHTT2 = 0;
                 }
 
+                
                 //if (wits0121RestauracionTight <= wits0121)
                 //{
                 //    BeginInvoke(new Action(() => txtSPP.Text = "0"), null);
@@ -1292,7 +1303,7 @@ namespace Smart_Rig_V1._1
                 Wits0119AnteriorTight = wits0119;
                 Wits0130AnteriorTight = wits0130;
 
-                Thread.Sleep(1150);
+                Thread.Sleep(50);
             }
             
         }

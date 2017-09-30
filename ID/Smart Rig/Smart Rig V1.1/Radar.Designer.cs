@@ -155,6 +155,7 @@
             this.metroLabel32 = new MetroFramework.Controls.MetroLabel();
             this.pbAnA = new System.Windows.Forms.PictureBox();
             this.pbRadar = new System.Windows.Forms.PictureBox();
+            this.txtpruebaNuevo = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -1517,7 +1518,7 @@
             // 
             this.txtResultadosEcuaciones.Location = new System.Drawing.Point(746, 25);
             this.txtResultadosEcuaciones.Name = "txtResultadosEcuaciones";
-            this.txtResultadosEcuaciones.Size = new System.Drawing.Size(553, 20);
+            this.txtResultadosEcuaciones.Size = new System.Drawing.Size(269, 20);
             this.txtResultadosEcuaciones.TabIndex = 13;
             // 
             // panel7
@@ -1693,11 +1694,19 @@
             this.pbRadar.TabIndex = 0;
             this.pbRadar.TabStop = false;
             // 
+            // txtpruebaNuevo
+            // 
+            this.txtpruebaNuevo.Location = new System.Drawing.Point(1030, 25);
+            this.txtpruebaNuevo.Name = "txtpruebaNuevo";
+            this.txtpruebaNuevo.Size = new System.Drawing.Size(269, 20);
+            this.txtpruebaNuevo.TabIndex = 16;
+            // 
             // Radar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1311, 780);
+            this.Controls.Add(this.txtpruebaNuevo);
             this.Controls.Add(this.pbAnA);
             this.Controls.Add(this.metroLabel32);
             this.Controls.Add(this.txtProfundidadActual);
@@ -1874,5 +1883,6 @@
         private System.Windows.Forms.PictureBox pbAnA;
         private System.Windows.Forms.Label lblAlarma;
         private System.Windows.Forms.Label lblAlerta;
+        private System.Windows.Forms.TextBox txtpruebaNuevo;
     }
 }
