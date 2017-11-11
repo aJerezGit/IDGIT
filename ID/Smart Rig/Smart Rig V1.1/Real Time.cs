@@ -107,10 +107,14 @@ namespace Smart_Rig_V1._1
 
                 while (leer)
                 {
+                    if (!PuertoSerial.IsOpen)
+                        PuertoSerial.Open();
 
-                    string[] separadorItems = { "&&", "!!" };
-                    string[] stringSeparators = new string[] { "\r\n" };
+                    //string[] separadorItems = { "&&", "!!" };
+                    string[] stringSeparators2 = new string[] { "\r\n&&" };
+                    string[] stringSeparators3 = new string[] { "!!" };
 
+                    List<String> datosAServidor = new List<string>();
                     int contador = 0;
                     Thread.Sleep(100);
                     string datosSerial = "";
@@ -118,34 +122,49 @@ namespace Smart_Rig_V1._1
                     //Thread.Sleep(250);
                     datosSerial = PuertoSerial.ReadExisting();
                     lblSerialStatus.Text = "Connected";
-
-                    string[] valor1 = datosSerial.Split(separadorItems, StringSplitOptions.None);
-                    foreach (string l in valor1)
+                    if (datosSerial != "" && !string.IsNullOrEmpty(datosSerial))
                     {
-                        if (l != "" && l.Length > 5)
+                        string[] valor3t = datosSerial.Split(stringSeparators2, StringSplitOptions.None);
+
+                        foreach (string t in valor3t)
                         {
-                            Tuple<List<protocoloWits>, int> resultado = new AD_protocoloWits().FormateaWits(cadenaConexion, MysqlConexion, l);
-                            pintarElemento(resultado.Item1);
-                            if (resultado.Item2 != 0)
+                            if (t.Contains("!!"))
                             {
-                                //if (resultado.Item2 < 33)
-                                //{ lblTotalDatos.ForeColor = System.Drawing.Color.Red; }
-                                //else if (resultado.Item2 > 34 && resultado.Item2 < 66)
-                                //{ lblTotalDatos.ForeColor = System.Drawing.Color.Yellow; }
-                                //else
-                                //{ lblTotalDatos.ForeColor = System.Drawing.Color.Green; }
-                                //lblTotalDatos.Text = resultado.Item2.ToString() + "%";
-
-                                mensajeMostrar = true;
-                                lblInternetStatus.Text = "Connected";
-
-                            }
-                            else {
-                                lblInternetStatus.Text = "Disconnected";
+                                string[] valor1 = t.Split(stringSeparators3, StringSplitOptions.None);
+                                //if (!valor1[0].Contains("&&"))
+                                datosAServidor.Add(valor1[0]);
                             }
                         }
+                        
 
-                        Application.DoEvents();
+                         foreach (string l in datosAServidor)
+                        {
+                            if (l != "" && l.Length > 5)
+                            {
+                                Tuple<List<protocoloWits>, int> resultado = new AD_protocoloWits().FormateaWits(cadenaConexion, MysqlConexion, l);
+                                pintarElemento(resultado.Item1);
+                                if (resultado.Item2 != 0)
+                                {
+                                    //if (resultado.Item2 < 33)
+                                    //{ lblTotalDatos.ForeColor = System.Drawing.Color.Red; }
+                                    //else if (resultado.Item2 > 34 && resultado.Item2 < 66)
+                                    //{ lblTotalDatos.ForeColor = System.Drawing.Color.Yellow; }
+                                    //else
+                                    //{ lblTotalDatos.ForeColor = System.Drawing.Color.Green; }
+                                    //lblTotalDatos.Text = resultado.Item2.ToString() + "%";
+
+                                    mensajeMostrar = true;
+                                    lblInternetStatus.Text = "Connected";
+
+                                }
+                                else
+                                {
+                                    lblInternetStatus.Text = "Disconnected";
+                                }
+                            }
+
+                            Application.DoEvents();
+                        }
                     }
 
                     contador += 1;

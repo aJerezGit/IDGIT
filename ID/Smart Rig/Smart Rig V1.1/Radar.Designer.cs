@@ -153,9 +153,9 @@
             this.metroLabel24 = new MetroFramework.Controls.MetroLabel();
             this.txtProfundidadActual = new System.Windows.Forms.TextBox();
             this.metroLabel32 = new MetroFramework.Controls.MetroLabel();
+            this.txtpruebaNuevo = new System.Windows.Forms.TextBox();
             this.pbAnA = new System.Windows.Forms.PictureBox();
             this.pbRadar = new System.Windows.Forms.PictureBox();
-            this.txtpruebaNuevo = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -855,6 +855,7 @@
             this.txtWOB.Name = "txtWOB";
             this.txtWOB.Size = new System.Drawing.Size(105, 20);
             this.txtWOB.TabIndex = 14;
+            this.txtWOB.Text = "0";
             // 
             // textBox13
             // 
@@ -862,6 +863,7 @@
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(105, 20);
             this.textBox13.TabIndex = 13;
+            this.textBox13.Text = "0";
             // 
             // txtSpeed
             // 
@@ -869,6 +871,7 @@
             this.txtSpeed.Name = "txtSpeed";
             this.txtSpeed.Size = new System.Drawing.Size(105, 20);
             this.txtSpeed.TabIndex = 12;
+            this.txtSpeed.Text = "0";
             // 
             // textBox15
             // 
@@ -876,6 +879,7 @@
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(105, 20);
             this.textBox15.TabIndex = 11;
+            this.textBox15.Text = "0";
             // 
             // metroLabel13
             // 
@@ -1263,6 +1267,7 @@
             this.txtDRAGtight.Name = "txtDRAGtight";
             this.txtDRAGtight.Size = new System.Drawing.Size(105, 20);
             this.txtDRAGtight.TabIndex = 18;
+            this.txtDRAGtight.Text = "0";
             // 
             // metroLabel26
             // 
@@ -1281,6 +1286,7 @@
             this.txtTorque.Name = "txtTorque";
             this.txtTorque.Size = new System.Drawing.Size(105, 20);
             this.txtTorque.TabIndex = 17;
+            this.txtTorque.Text = "0";
             // 
             // metroLabel28
             // 
@@ -1299,6 +1305,7 @@
             this.txtSPP.Name = "txtSPP";
             this.txtSPP.Size = new System.Drawing.Size(105, 20);
             this.txtSPP.TabIndex = 16;
+            this.txtSPP.Text = "0";
             // 
             // txtQTight
             // 
@@ -1306,6 +1313,7 @@
             this.txtQTight.Name = "txtQTight";
             this.txtQTight.Size = new System.Drawing.Size(105, 20);
             this.txtQTight.TabIndex = 15;
+            this.txtQTight.Text = "0";
             // 
             // metroLabel29
             // 
@@ -1674,6 +1682,13 @@
             this.metroLabel32.TabIndex = 13;
             this.metroLabel32.Text = "MD :";
             // 
+            // txtpruebaNuevo
+            // 
+            this.txtpruebaNuevo.Location = new System.Drawing.Point(1030, 25);
+            this.txtpruebaNuevo.Name = "txtpruebaNuevo";
+            this.txtpruebaNuevo.Size = new System.Drawing.Size(269, 20);
+            this.txtpruebaNuevo.TabIndex = 16;
+            // 
             // pbAnA
             // 
             this.pbAnA.Image = global::Smart_Rig_V1._1.Properties.Resources.green2;
@@ -1685,21 +1700,15 @@
             // 
             // pbRadar
             // 
-            this.pbRadar.BackgroundImage = global::Smart_Rig_V1._1.Properties.Resources.radar_base23;
+            this.pbRadar.BackgroundImage = global::Smart_Rig_V1._1.Properties.Resources.radarLimpio;
             this.pbRadar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbRadar.Image = global::Smart_Rig_V1._1.Properties.Resources.radarNew;
             this.pbRadar.Location = new System.Drawing.Point(49, 51);
             this.pbRadar.Name = "pbRadar";
             this.pbRadar.Size = new System.Drawing.Size(644, 644);
             this.pbRadar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbRadar.TabIndex = 0;
             this.pbRadar.TabStop = false;
-            // 
-            // txtpruebaNuevo
-            // 
-            this.txtpruebaNuevo.Location = new System.Drawing.Point(1030, 25);
-            this.txtpruebaNuevo.Name = "txtpruebaNuevo";
-            this.txtpruebaNuevo.Size = new System.Drawing.Size(269, 20);
-            this.txtpruebaNuevo.TabIndex = 16;
             // 
             // Radar
             // 

@@ -113,6 +113,26 @@ namespace Smart_Rig_V1._1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap radarLimpio {
+            get {
+                object obj = ResourceManager.GetObject("radarLimpio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap radarNew {
+            get {
+                object obj = ResourceManager.GetObject("radarNew", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap red {
             get {
                 object obj = ResourceManager.GetObject("red", resourceCulture);
@@ -126,6 +146,16 @@ namespace Smart_Rig_V1._1.Properties {
         internal static System.Drawing.Bitmap red2 {
             get {
                 object obj = ResourceManager.GetObject("red2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap try1 {
+            get {
+                object obj = ResourceManager.GetObject("try1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
