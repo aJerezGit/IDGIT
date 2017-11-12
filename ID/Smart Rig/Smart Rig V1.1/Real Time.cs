@@ -189,6 +189,8 @@ namespace Smart_Rig_V1._1
             {
                 Application.DoEvents();
                 PuertoSerial.Close();
+                PuertoSerial.Dispose();
+                //PuertoSerial = new System.IO.Ports.SerialPort(puertoGeneral, baudGeneral);
                 if (mensajeMostrar)
                 {
                     AutoClosingMessageBox.Show("Error al conectar el puerto serial. " + ex.Message + "Intentando Conectar nuevamente...", "Desconexión", 5000);

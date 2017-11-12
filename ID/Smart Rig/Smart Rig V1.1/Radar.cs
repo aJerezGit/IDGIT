@@ -28,7 +28,7 @@ namespace Smart_Rig_V1._1
         Graphics g;
         //Timer t = new Timer();
         //private System.Threading.Timer Lector;
-        Thread tr, trNPT;
+        Thread tr, trNPT, trHMSE, trPIPEMOVE, trINFLUX, trLOSS, trTIGHT;
         float valorActual = 1;
         string dataConexion = "C:\\Pyosoft\\Data.txt";
 
@@ -66,6 +66,7 @@ namespace Smart_Rig_V1._1
         double wits0171;
         double wits0112;
         double wits0115;
+        double wits0139;
 
 
         double ropa1;
@@ -190,20 +191,20 @@ namespace Smart_Rig_V1._1
                 tr = new Thread(Timer_Tick);
                 tr.Start();
                 //Lector = new System.Threading.Timer(Timer_Tick, null, 0, 1000);
-                //trNPT = new Thread(timerGeneral_TickNPT);
-                //trNPT.Start();
+                trNPT = new Thread(timerGeneral_TickNPT);
+                trNPT.Start();
                 //INFLUX
-                //trNPT = new Thread(timerGeneral_TickINFLUX);
-                //trNPT.Start();
+                trINFLUX = new Thread(timerGeneral_TickINFLUX);
+                trINFLUX.Start();
                 //LOSS
-                //trNPT = new Thread(timerGeneral_TickLOSS);
-                //trNPT.Start();
+                trLOSS = new Thread(timerGeneral_TickLOSS);
+                trLOSS.Start();
                 //pipe move
-                trNPT = new Thread(timerGeneral_TickPIPE_MOVE);
-                trNPT.Start();
+                trPIPEMOVE = new Thread(timerGeneral_TickPIPE_MOVE);
+                trPIPEMOVE.Start();
                 //tight
-                trNPT = new Thread(TimerGeneral_TickTight);
-                trNPT.Start();
+                trTIGHT = new Thread(TimerGeneral_TickTight);
+                trTIGHT.Start();
 
 
             }
@@ -410,6 +411,8 @@ namespace Smart_Rig_V1._1
                 string datosSerial = "";
                 //mensajeMostrar = true;
                 datosSerial = SpComunicacion.ReadExisting();
+
+                SpComunicacion.Close();
                 if (datosSerial != "" && !string.IsNullOrEmpty(datosSerial))
                 {
                     string[] valor3t = datosSerial.Split(stringSeparators2, StringSplitOptions.None);
@@ -484,6 +487,10 @@ namespace Smart_Rig_V1._1
                                     {
                                         wits0121 = double.Parse(item.WITvalor);
                                     }
+                                    if (item.WITitem == "0139")
+                                    {
+                                        wits0139 = double.Parse(item.WITvalor);
+                                    }
                                     BeginInvoke(new Action(() => txtpruebaNuevo.Text = tiempoEjecucion.ToString()), null);
 
                                 }
@@ -519,7 +526,7 @@ namespace Smart_Rig_V1._1
 
                     BeginInvoke(new Action(() => txtTVAloss.Text = wits0126.ToString()), null);
                     BeginInvoke(new Action(() => txtQTight.Text = wits0130.ToString()), null);
-
+                    BeginInvoke(new Action(() => txtLagDepth.Text = wits0139.ToString()), null);
 
                     if (wits0108 == wits0110)
                     {
@@ -539,7 +546,7 @@ namespace Smart_Rig_V1._1
 
 
                 contador += 1;
-                if (contador == 1)
+                if (contador == 2)
                 {
                     SpComunicacion.DiscardInBuffer();
                     contador = 0;
@@ -547,10 +554,9 @@ namespace Smart_Rig_V1._1
 
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -659,8 +665,8 @@ namespace Smart_Rig_V1._1
 
                 if (porcentaje1 > 100) { porcentaje1 = 100; }
 
-                double porcentajex = (porcentaje1 * 168) / 100;
-                double porcentajey = (porcentaje1 * -96) / 100;
+                double porcentajex = (porcentaje1 * 127) / 100;//168
+                double porcentajey = (porcentaje1 * -65) / 100;//-96
 
                 valorX = float.Parse(porcentajex.ToString());
                 valorY = float.Parse(porcentajey.ToString()); ;
@@ -1569,6 +1575,19 @@ namespace Smart_Rig_V1._1
             float[] resultadoFunction = { valorX, valorY, float.Parse(lectura) };
 
             return resultadoFunction;
+        }
+
+        private void Radar_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //SpComunicacion.Close();
+            if(trNPT.IsAlive)   trNPT.Abort();
+            if(trINFLUX.IsAlive)    trINFLUX.Abort();
+            if(tr.IsAlive)  tr.Abort();
+            if(trPIPEMOVE.IsAlive)  trPIPEMOVE.Abort();
+            if(trLOSS.IsAlive)  trLOSS.Abort();
+            if(trTIGHT.IsAlive) trTIGHT.Abort();
+            //this.Close();
+
         }
     }
 }

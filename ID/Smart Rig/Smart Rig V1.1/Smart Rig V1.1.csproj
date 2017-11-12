@@ -221,6 +221,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="img\green.png" />
+    <None Include="Resources\radarNew1.png" />
     <None Include="Resources\radarNew.png" />
     <None Include="Resources\radarLimpio.png" />
     <None Include="Resources\try1.png" />

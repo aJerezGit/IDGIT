@@ -156,6 +156,8 @@
             this.txtpruebaNuevo = new System.Windows.Forms.TextBox();
             this.pbAnA = new System.Windows.Forms.PictureBox();
             this.pbRadar = new System.Windows.Forms.PictureBox();
+            this.metroLabel33 = new MetroFramework.Controls.MetroLabel();
+            this.txtLagDepth = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -1692,17 +1694,16 @@
             // pbAnA
             // 
             this.pbAnA.Image = global::Smart_Rig_V1._1.Properties.Resources.green2;
-            this.pbAnA.Location = new System.Drawing.Point(61, 57);
+            this.pbAnA.Location = new System.Drawing.Point(49, 108);
             this.pbAnA.Name = "pbAnA";
-            this.pbAnA.Size = new System.Drawing.Size(74, 72);
+            this.pbAnA.Size = new System.Drawing.Size(68, 67);
             this.pbAnA.TabIndex = 15;
             this.pbAnA.TabStop = false;
             // 
             // pbRadar
             // 
-            this.pbRadar.BackgroundImage = global::Smart_Rig_V1._1.Properties.Resources.radarLimpio;
+            this.pbRadar.BackgroundImage = global::Smart_Rig_V1._1.Properties.Resources.radarNew1;
             this.pbRadar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbRadar.Image = global::Smart_Rig_V1._1.Properties.Resources.radarNew;
             this.pbRadar.Location = new System.Drawing.Point(49, 51);
             this.pbRadar.Name = "pbRadar";
             this.pbRadar.Size = new System.Drawing.Size(644, 644);
@@ -1710,11 +1711,29 @@
             this.pbRadar.TabIndex = 0;
             this.pbRadar.TabStop = false;
             // 
+            // metroLabel33
+            // 
+            this.metroLabel33.AutoSize = true;
+            this.metroLabel33.Location = new System.Drawing.Point(57, 60);
+            this.metroLabel33.Name = "metroLabel33";
+            this.metroLabel33.Size = new System.Drawing.Size(81, 19);
+            this.metroLabel33.TabIndex = 17;
+            this.metroLabel33.Text = "LAG DEPTH:";
+            // 
+            // txtLagDepth
+            // 
+            this.txtLagDepth.Location = new System.Drawing.Point(57, 84);
+            this.txtLagDepth.Name = "txtLagDepth";
+            this.txtLagDepth.Size = new System.Drawing.Size(96, 20);
+            this.txtLagDepth.TabIndex = 18;
+            // 
             // Radar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1311, 780);
+            this.Controls.Add(this.metroLabel33);
+            this.Controls.Add(this.txtLagDepth);
             this.Controls.Add(this.txtpruebaNuevo);
             this.Controls.Add(this.pbAnA);
             this.Controls.Add(this.metroLabel32);
@@ -1734,6 +1753,7 @@
             this.Controls.Add(this.pbRadar);
             this.Name = "Radar";
             this.Text = "Radar";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Radar_FormClosing);
             this.Load += new System.EventHandler(this.Radar_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -1893,5 +1913,7 @@
         private System.Windows.Forms.Label lblAlarma;
         private System.Windows.Forms.Label lblAlerta;
         private System.Windows.Forms.TextBox txtpruebaNuevo;
+        private MetroFramework.Controls.MetroLabel metroLabel33;
+        private System.Windows.Forms.TextBox txtLagDepth;
     }
 }

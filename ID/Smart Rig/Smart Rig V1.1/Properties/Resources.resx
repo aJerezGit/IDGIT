@@ -118,14 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="green2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\green2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="no" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\no.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="try1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\try1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="red2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\red2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,8 +139,11 @@
   <data name="radar_base2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\radar_base2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="try1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\try1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="green2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\green2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="radarNew" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\radarNew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="yes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\yes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,7 +151,7 @@
   <data name="radar_base23" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\radar_base23.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="radarNew" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\radarNew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="radarNew1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\radarNew1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
